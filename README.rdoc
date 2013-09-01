@@ -1,5 +1,7 @@
 == README
 
+{<img src="https://coveralls.io/repos/moriC/posfis/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/moriC/posfis]
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
