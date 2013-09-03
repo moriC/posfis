@@ -58,4 +58,7 @@ Posfis::Application.routes.draw do
   #     resources :products
   #   end
   resources :tops
+
+  # 管理関係ルーティング
+  resources :manage 
 end
