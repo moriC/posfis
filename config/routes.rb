@@ -2,7 +2,7 @@ Posfis::Application.routes.draw do
   # デフォルトページを公開ページに設定  
   root 'tops#index'
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => :registrations }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
