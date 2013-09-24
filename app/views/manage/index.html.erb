@@ -1,2 +1,5 @@
 管理ページ
+<br>
+<%= current_user.user_name %>
+<br>
 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
