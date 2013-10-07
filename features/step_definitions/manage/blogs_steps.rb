@@ -11,13 +11,14 @@ end
 end
 
 ならば(/^新規投稿項目を入力する$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'blog[title]', :with => 'テスト'
+	fill_in 'blog[contents]', :with => 'テスト投稿'
 end
 
 ならば(/^保存して投稿を押す$/) do
-  pending # express the regexp above with the code you wish you had
+	click_button "Save Blog"
 end
 
 ならば(/^投稿された結果が表示される$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content("新規ブログを正常に保存しました。")
 end
