@@ -3,6 +3,7 @@ class Manage::BlogsController < ManageController
 	end
 
 	def new
+		@categories = BlogCategory.all
 		@blog = Blogs.new
 	end
 end

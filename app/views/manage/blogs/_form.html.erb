@@ -1,0 +1,10 @@
+<%= form_for :blog, url: manage_blogs_path do |f| %>
+	<%= f.label :category, "カテゴリー" %>
+	<%= select_tag 'blog[category_id]', options_from_collection_for_select(@categories, :id, :category_name) %>
+	<br>
+	<%= f.label :title,"タイトル" %><%= f.text_field :title %>
+	<br>
+	<%= f.label :contents, "本文" %><%= f.text_area :contents %>
+	<br>
+	<%= f.submit %>
+<% end %>
