@@ -411,6 +411,20 @@
         null,
         null
       ],
+      "/Users/tomohiro/rails/posfis/spec/factories/userinfos.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/tomohiro/rails/posfis/spec/factories/users.rb": [
         null,
         null,
@@ -494,6 +508,12 @@
         null,
         1,
         null,
+        null,
+        1,
+        null,
+        1,
+        5,
+        null,
         null
       ],
       "/Users/tomohiro/rails/posfis/app/helpers/application_helper.rb": [
@@ -512,9 +532,9 @@
         1,
         null
       ],
-      "/Users/tomohiro/rails/posfis/app/controllers/tops_controller.rb": [
+      "/Users/tomohiro/rails/posfis/app/controllers/manage_controller.rb": [
         1,
-        null,
+        1,
         null,
         1,
         null,
@@ -526,8 +546,116 @@
         null,
         1,
         null
+      ],
+      "/Users/tomohiro/rails/posfis/spec/controllers/registrations_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/app/controllers/registrations_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/spec/controllers/tops_controller_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        1,
+        1,
+        null,
+        null,
+        2,
+        null,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/app/controllers/tops_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/spec/helpers/manage_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/spec/helpers/registrations_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/spec/helpers/tops_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/spec/models/userinfo_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/tomohiro/rails/posfis/app/models/userinfo.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1378896091
+    "timestamp": 1380508528
   }
 }
