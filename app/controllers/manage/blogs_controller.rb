@@ -3,5 +3,6 @@ class Manage::BlogsController < ManageController
 	end
 
 	def new
+		@blog = Blogs.new
 	end
 end

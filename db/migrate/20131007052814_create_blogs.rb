@@ -1,6 +1,6 @@
-class CreateManageBlogs < ActiveRecord::Migration
+class CreateBlogs < ActiveRecord::Migration
   def change
-    create_table :manage_blogs do |t|
+    create_table :blogs do |t|
       t.integer :user_id
       t.integer :category_id
       t.string :title
