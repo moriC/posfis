@@ -1,5 +1,6 @@
 class Manage::BlogsController < ManageController
 	def index
+		@blogs = Blogs.all
 	end
 
 	def new
