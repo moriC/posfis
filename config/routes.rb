@@ -60,5 +60,9 @@ Posfis::Application.routes.draw do
   resources :tops
 
   # 管理関係ルーティング
+
+  namespace :manage do
+    resources :blogs
+  end
   resources :manage 
 end
