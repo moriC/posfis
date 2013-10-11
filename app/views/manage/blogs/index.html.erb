@@ -1,0 +1,8 @@
+<%= flash[:notice] %>
+記事一覧
+<br>
+<% @blogs.each do |blog| %>
+  <%= blog.title %>
+  <br>
+  <%= blog.created_at %>
+<% end %>
