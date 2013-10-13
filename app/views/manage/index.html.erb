@@ -1,5 +1,140 @@
-管理ページ
-<br>
-<%= current_user.user_name %>
-<br>
-<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<div class="item w2">
+	<div class="news">
+		<h2 class="bar">お知らせ</h2>
+		<div class="inner">
+			<ul>
+				<li><span class="date">2013.07.13 - </span>メッセージが届きました</li>
+				<li><span class="date">2013.07.01 - </span>アップデートが届きました</li>
+				<li><span class="date">2013.06.15 - </span>メンテナンスのお知らせ</li>
+				<li><span class="date">2013.06.11 - </span>メッセージが届きました</li>
+				<li><span class="date">2013.06.01 - </span>アップデートが届きました</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="item w2">
+	<div class="feed">
+		<h2 class="bar">フィード</h2>
+		<div class="inner">
+			<table>
+				<tr>
+					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+					<td class="friendInfo">
+						<p class="date">2013年12月12日</p>
+						<h3 class="title">タイトル</h3>
+						<p class="writer">森下智裕 / 農家</p>
+					</td>
+					<td class="shareItem">
+						<ul>
+						<li class="star"><span class="icon icon-star-empty"></span></li>
+						<li><span class="icon icon-export"></span></li>
+						</ul>
+					</td> 
+				</tr>
+				<tr>
+					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+					<td class="friendInfo">
+						<p class="date">2013年12月12日</p>
+						<h3 class="title">タイトル</h3>
+						<p class="writer">森下智裕 / 農家</p>
+					</td>
+					<td class="shareItem">
+						<ul>
+						<li class="star"><span class="icon icon-star-empty"></span></li>
+						<li><span class="icon icon-export"></span></li>
+						</ul>
+					</td> 
+				</tr>
+				<tr>
+					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+					<td class="friendInfo">
+						<p class="date">2013年12月12日</p>
+						<h3 class="title">タイトル</h3>
+						<p class="writer">森下智裕 / 農家</p>
+					</td>
+					<td class="shareItem">
+						<ul>
+						<li class="star"><span class="icon icon-star-empty"></span></li>
+						<li><span class="icon icon-export"></span></li>
+						</ul>
+					</td> 
+				</tr>
+				<tr>
+					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+					<td class="friendInfo">
+						<p class="date">2013年12月12日</p>
+						<h3 class="title">タイトル</h3>
+						<p class="writer">森下智裕 / 農家</p>
+					</td>
+					<td class="shareItem">
+						<ul>
+						<li class="star"><span class="icon icon-star-empty"></span></li>
+						<li><span class="icon icon-export"></span></li>
+						</ul>
+					</td> 
+				</tr>
+				<tr>
+					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+					<td class="friendInfo">
+						<p class="date">2013年12月12日</p>
+						<h3 class="title">タイトル</h3>
+						<p class="writer">森下智裕 / 農家</p>
+					</td>
+					<td class="shareItem">
+						<ul>
+						<li class="star"><span class="icon icon-star-empty"></span></li>
+						<li><span class="icon icon-export"></span></li>
+						</ul>
+					</td> 
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="item w2">
+	<div class="quick">
+		<h2 class="bar">クイック投稿</h2>
+		<div class="inner">
+			<form action="">
+				<input type="text" name="" id="" placeholder="タイトル" />
+				<select name="" id="">
+				<option value="カテゴリ">カテゴリ</option>
+				</select>
+				<textarea name="" id="" cols="30" rows="10"></textarea>
+				<input type="submit" value="投稿" />
+			</form>
+		</div>
+	</div>
+</div>
+<div class="item w4">
+	<div class="accsess">
+		<h2 class="bar">アクセス数</h2>
+		<div class="inner">
+			<!-- グラフ -->
+			<canvas id="canvas" width="740" height="250"></canvas>
+		</div>
+	</div>
+</div>
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="css/fontello-ie7.css" />
+<script src="js/html5shiv.js"></script>
+<script src="js/IE9.js"></script>
+<![endif]-->
+
+<script>
+	//アクセスグラフ
+	var lineChartData = {
+		labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
+			datasets : [
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,1)",
+				pointColor : "rgba(151,187,205,1)",
+				pointStrokeColor : "#fff",
+				data : [20,18,14,19,14,17,10,19,14,17,10,22]
+			}
+		]
+	}
+	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+</script>
