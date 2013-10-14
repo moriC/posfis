@@ -62,3 +62,5 @@ gem "devise"
 gem "factory_girl_rails"
 
 gem 'coveralls', require: false
+
+gem 'i18n'
