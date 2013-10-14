@@ -1,8 +1,35 @@
 <%= flash[:notice] %>
-記事一覧
-<br>
-<% @blogs.each do |blog| %>
-  <%= blog.title %>
-  <br>
-  <%= blog.created_at %>
-<% end %>
+<div class="item w3">
+	<div class="artList">
+		<h2 class="bar">記事一覧</h2>
+		<div class="inner">
+			<% @blogs.each do |blog| %>
+				<div class="box1">
+					<div class="artTitle"><a href="artEdit.html"><%= blog.title %></a></div>
+						<div class="artLiInfo">
+							<div class="date"><p><%= blog.created_at %></p></div>
+							<div class="artMenu">
+							<ul>
+								<li><a href="artEdit.html">編集</a></li>
+								<li>ゴミ箱</li>
+								<li>表示</li>
+								<li class="status">公開</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="item w1">
+	<div class="newArt">
+		<h2 class="bar">記事メニュー</h2>
+		<div class="inner">
+			<ul>
+				<li><%= link_to "新規記事", new_manage_blog_path %></li>
+			</ul>
+		</div>
+	</div>
+</div>
