@@ -10,10 +10,14 @@
 							<div class="date"><p><%= blog.created_at %></p></div>
 							<div class="artMenu"
 							<ul>
-								<li><a href="artEdit.html">編集</a></li>
+								<li><%= link_to "編集", edit_manage_blog_path(blog.id) %></li>
 								<li>ゴミ箱</li>
 								<li>表示</li>
-								<li class="status">公開</li>
+								<% if blog.condition %>
+									<li class="status">公開</li>
+								<% else %>
+									<li class="status">未公開</li>
+								<% end %>
 							</ul>
 						</div>
 					</div>

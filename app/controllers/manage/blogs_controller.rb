@@ -8,6 +8,11 @@ class Manage::BlogsController < ManageController
 		@blog = Blogs.new
 	end
 
+	def edit
+		@categories = BlogCategory.all
+		@blog = Blogs.find(params[:id])
+	end
+
 	def create
 		@blog = Blogs.new(blog_params)
 
