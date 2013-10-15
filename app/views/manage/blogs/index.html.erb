@@ -1,39 +1,35 @@
-<%= flash[:notice] %>
-<div class="item w3">
-	<div class="artList">
-		<h2 class="bar">記事一覧</h2>
-		<div class="inner">
-			<% @blogs.each do |blog| %>
-				<div class="box1">
-					<div class="artTitle"><a href="artEdit.html"><%= blog.title %></a></div>
-						<div class="artLiInfo">
-							<div class="date"><p><%= blog.created_at %></p></div>
-							<div class="artMenu"
-							<ul>
-								<li><%= link_to "編集", edit_manage_blog_path(blog.id) %></li>
-								<li>ゴミ箱</li>
-								<li>表示</li>
-								<% if blog.condition %>
-									<li class="status">公開</li>
-								<% else %>
-									<li class="status">未公開</li>
-								<% end %>
-							</ul>
-						</div>
-					</div>
-				</div>
-			<% end %>
-		</div>
-	</div>
-</div>
+<h1>Listing manage_blogs</h1>
 
-<div class="item w1">
-	<div class="newArt">
-		<h2 class="bar">記事メニュー</h2>
-		<div class="inner">
-			<ul>
-				<li><%= link_to "新規記事", new_manage_blog_path %></li>
-			</ul>
-		</div>
-	</div>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Condition</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manage_blogs.each do |manage_blog| %>
+      <tr>
+        <td><%= manage_blog.user_id %></td>
+        <td><%= manage_blog.category_id %></td>
+        <td><%= manage_blog.title %></td>
+        <td><%= manage_blog.content %></td>
+        <td><%= manage_blog.condition %></td>
+        <td><%= link_to 'Show', manage_blog %></td>
+        <td><%= link_to 'Edit', edit_manage_blog_path(manage_blog) %></td>
+        <td><%= link_to 'Destroy', manage_blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog', new_manage_blog_path %>
