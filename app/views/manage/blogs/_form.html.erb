@@ -1,37 +1,35 @@
-<%= form_for(@manage_blog) do |f| %>
-  <% if @manage_blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@manage_blog.errors.count, "error") %> prohibited this manage_blog from being saved:</h2>
-
-      <ul>
-      <% @manage_blog.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="item w3">
+  <div class="quick edit">
+    <% if @manage_blog.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@manage_blog.errors.count, "error") %> prohibited this manage_blog from being saved:</h2>
+        <ul>
+          <% @manage_blog.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <h2 class="bar">記事一覧</h2>
+    <div class="inner">
+      <%= form_for(@manage_blog) do |f| %>
+        <%= f.text_field :title %>
+        <%= select_tag 'blog[category_id]', options_from_collection_for_select(@blog_categories, :id, :category_name) %>
+        <input type="button" value="画像を追加" />
+        <%= f.text_area :content %>
+        <%= f.submit %>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="item w1">
+  <div class="newArt">
+    <h2 class="bar">ステータス</h2>
+    <div class="inner">
+      <ul>
+        <li class="status">公開</li>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
   </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :condition %><br>
-    <%= f.number_field :condition %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,4 +1,4 @@
-class Manage::BlogsController < ApplicationController
+class Manage::BlogsController < ManageController
   before_action :set_manage_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /manage/blogs
@@ -15,16 +15,20 @@ class Manage::BlogsController < ApplicationController
   # GET /manage/blogs/new
   def new
     @manage_blog = Manage::Blog.new
+    @blog_categories = Manage::BlogCategories.all
   end
 
   # GET /manage/blogs/1/edit
   def edit
+    @blog_categories = Manage::BlogCategories.all
   end
 
   # POST /manage/blogs
   # POST /manage/blogs.json
   def create
     @manage_blog = Manage::Blog.new(manage_blog_params)
+    @manage_blog.user_id = current_user.id
+    @manage_blog.condition = 1
 
     respond_to do |format|
       if @manage_blog.save
