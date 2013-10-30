@@ -1,8 +1,34 @@
-<%= flash[:notice] %>
-記事一覧
-<br>
-<% @blogs.each do |blog| %>
-  <%= blog.title %>
-  <br>
-  <%= blog.created_at %>
-<% end %>
+<div class="item w3">
+  <div class="artList">
+    <h2 class="bar">記事一覧</h2>
+    <div class="inner">  
+      <% @manage_blogs.each do |manage_blog| %>
+        <div class="box1">
+          <div class="artTitle"><a href="artEdit.html"><%= manage_blog.title %></a></div>
+          <div class="artLiInfo">
+            <div class="date"><p>2012年12月12日</p></div>
+            <div class="artMenu">
+              <ul>
+                <li><%= link_to 'Edit', edit_manage_blog_path(manage_blog) %></li>
+                <li><%= link_to 'Destroy', manage_blog, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                <li><%= link_to 'Show', manage_blog %></li>
+                <li class="status">公開</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>               
+    </div>
+  </div>
+</div>
+    
+<div class="item w1">
+  <div class="newArt">
+    <h2 class="bar">記事メニュー</h2>
+    <div class="inner">
+      <ul>
+        <li><%= link_to 'New Blog', new_manage_blog_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>

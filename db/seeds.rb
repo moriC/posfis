@@ -8,5 +8,5 @@
 
 FactoryGirl.create :user
 FactoryGirl.create :userinfo
-FactoryGirl.create :blog_category
-FactoryGirl.create :blog
+FactoryGirl.create :manage_blog_category
+FactoryGirl.create :manage_blog

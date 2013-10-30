@@ -1,4 +1,8 @@
 Posfis::Application.routes.draw do
+  namespace :manage do
+    resources :blogs
+  end
+
   # デフォルトページを公開ページに設定  
   root 'tops#index'
 
@@ -62,7 +66,6 @@ Posfis::Application.routes.draw do
   # 管理関係ルーティング
 
   namespace :manage do
-    resources :blogs
   end
   resources :manage 
 end

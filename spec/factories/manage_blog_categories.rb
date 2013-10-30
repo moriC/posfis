@@ -1,8 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :blog_category, :class => 'BlogCategory' do
-    category_name "Test Data"
+  factory :manage_blog_category, :class => 'Manage::BlogCategories' do
+    category_name "MyString"
     condition 1
   end
 end
