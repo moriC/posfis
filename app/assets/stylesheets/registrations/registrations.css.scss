@@ -2,7 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* line 17, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+@import "compass";
+@import "compass/reset";
+
+@mixin placeholder-color($color) {
+	&:-moz-placeholder {
+		color:$color;
+	}
+	&::-webkit-input-placeholder {
+		color:$color;
+	}
+}
+
+%clearfix {
+	*zoom: 1;
+}
+%clearfix:after {
+	content: '';
+	display: block;
+	clear : both;
+	height: 0;
+}
+@media print {  
+	%clearfix:after {    
+		height: 1px;    
+		margin-bottom: -1px;
+		visibility: hidden;	
+	}
+} 
+ 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,188 +45,93 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+	@include box-sizing(border-box);
 }
 
-/* line 22, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
+body{
+	font-family: sans-serif;
+	font-size: 14px;
+	background-color: #ce5044;
 }
 
-/* line 24, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
+.contents{
+	width: 300px;
+	height: auto;
+	margin: 50px auto;
+	text-align: center;
+	
+	span{
+		color: #fff;
+		font-size: 450%;
+	}
+	
+	input{
+		display: block;
+		border: none;
+		color: #cb3c37;
+		background-color: #fff;
+		@include box-sizing(border-box);
+	}
+	
+	input[type="text"], input[type="password"]{
+		width: 100%;
+		font-size: 20px;
+		margin: 20px 0;
+		padding: 10px;
+		@include placeholder-color(#cb3c37);
+		
+		&:focus{
+			outline: 0;
+		}
+	}
+	
+	.button{
+		@extend %clearfix;
+	}
+	
+	input[type="submit"]{
+		width: 50%;
+		color: #fff;
+		font-size: 20px;
+		padding: 20px;
+		margin-top: 40px;
+		border-top: solid 2px #fff;
+		background-color: #ce5044;
+		float: left;
+		-moz-transition-duration: .5s;
+		-webkit-transition-duration: .5s;
+		-o-transition-duration: .5s;
+		-ms-transition-duration: .5s;
+		//iOS対策
+		-webkit-appearance: none;
+		@include border-radius(0);
+		
+		&:hover{
+			background-color: #ad332f;
+		}
+	}
+	
+	input[type="button"]{
+		@extend input[type="submit"];
+		border-left: solid 2px #fff; 
+	}
 }
 
-/* line 26, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
-/* line 28, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
-/* line 15, ../sass/login.scss */
-.contents .button {
-  *zoom: 1;
-}
-
-/* line 18, ../sass/login.scss */
-.contents .button:after {
-  content: '';
-  display: block;
-  clear: both;
-  height: 0;
-}
-
-@media print {
-  /* line 25, ../sass/login.scss */
-  .contents .button:after {
-    height: 1px;
-    margin-bottom: -1px;
-    visibility: hidden;
-  }
-}
-/* line 45, ../sass/login.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 49, ../sass/login.scss */
-body {
-  font-family: sans-serif;
-  font-size: 14px;
-  background-color: #ce5044;
-}
-
-/* line 55, ../sass/login.scss */
-.contents {
-  width: 300px;
-  height: auto;
-  margin: 50px auto;
-  text-align: center;
-}
-/* line 61, ../sass/login.scss */
-.contents span {
-  color: #fff;
-  font-size: 450%;
-}
-/* line 66, ../sass/login.scss */
-.contents input {
-  display: block;
-  border: none;
-  color: #cb3c37;
-  background-color: #fff;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 74, ../sass/login.scss */
-.contents input[type="text"], .contents input[type="password"] {
-  width: 100%;
-  font-size: 20px;
-  margin: 20px 0;
-  padding: 10px;
-}
-/* line 7, ../sass/login.scss */
-.contents input[type="text"]:-moz-placeholder, .contents input[type="password"]:-moz-placeholder {
-  color: #cb3c37;
-}
-/* line 10, ../sass/login.scss */
-.contents input[type="text"]::-webkit-input-placeholder, .contents input[type="password"]::-webkit-input-placeholder {
-  color: #cb3c37;
-}
-/* line 81, ../sass/login.scss */
-.contents input[type="text"]:focus, .contents input[type="password"]:focus {
-  outline: 0;
-}
-/* line 90, ../sass/login.scss */
-.contents input[type="submit"], .contents input[type="button"] {
-  width: 50%;
-  color: #fff;
-  font-size: 20px;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: solid 2px #fff;
-  background-color: #ce5044;
-  float: left;
-  -moz-transition-duration: .5s;
-  -webkit-transition-duration: .5s;
-  -o-transition-duration: .5s;
-  -ms-transition-duration: .5s;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-}
-/* line 107, ../sass/login.scss */
-.contents input[type="submit"]:hover, .contents input[type="button"]:hover {
-  background-color: #ad332f;
-}
-/* line 112, ../sass/login.scss */
-.contents input[type="button"] {
-  border-left: solid 2px #fff;
-}
 
 /**************************************
 *forgot
 **************************************/
-/* line 124, ../sass/login.scss */
+
 .message {
-  margin-top: 80px;
-  text-align: center;
-}
-/* line 128, ../sass/login.scss */
-.message a {
-  text-decoration: none;
-  font-size: 600%;
-  font-weight: bold;
-  color: #af1921;
-  text-shadow: 0 1px 2px #edb3b2;
+	margin-top: 80px;
+	text-align: center;
+	
+	a{
+		text-decoration: none;
+		font-size: 600%;
+		font-weight: bold;
+		color: #af1921;
+		text-shadow: 0 1px 2px #edb3b2;
+	}
 }
