@@ -1,14 +1,16 @@
 Posfis::Application.routes.draw do
+  
   namespace :manage do
     resources :friends
-  end
-
-  namespace :manage do
     resources :products
-  end
-
-  namespace :manage do
     resources :blogs
+    resources :trades do
+      collection do
+        get 'history'
+      end
+    end
+    resources :settings
+    resources :user_settings
   end
 
   # デフォルトページを公開ページに設定  

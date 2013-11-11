@@ -1,0 +1,2 @@
+module Manage::UserSettingsHelper
+end
