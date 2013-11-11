@@ -1,5 +1,9 @@
 Posfis::Application.routes.draw do
   namespace :manage do
+    resources :products
+  end
+
+  namespace :manage do
     resources :blogs
   end
 

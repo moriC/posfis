@@ -1,0 +1,17 @@
+<%= form_for(@manage_product) do |f| %>
+  <% if @manage_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manage_product.errors.count, "error") %> prohibited this manage_product from being saved:</h2>
+
+      <ul>
+      <% @manage_product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
