@@ -21,9 +21,9 @@
 					<tr>
 						<td class="face"><img src="img/moriC.jpg" alt="" /></td>
 						<td class="friendInfo">
-							<p class="date">2013年12月12日</p>
+							<p class="date"><%= format_date manage_blog.created_at %></p>
 							<h3 class="title"><%= manage_blog.title %></h3>
-							<p class="writer"><%= manage_blog.user_id %></p>
+							<p class="writer"><%= manage_blog.user.user_name %></p>
 						</td>
 						<td class="shareItem">
 							<ul>
@@ -41,14 +41,13 @@
 	<div class="quick">
 		<h2 class="bar">クイック投稿</h2>
 		<div class="inner">
-			<form action="">
-				<input type="text" name="" id="" placeholder="タイトル" />
-				<select name="" id="">
-				<option value="カテゴリ">カテゴリ</option>
-				</select>
-				<textarea name="" id="" cols="30" rows="10"></textarea>
-				<input type="submit" value="投稿" />
-			</form>
+			<%= form_for @quick_blog, :url => {:action => 'create_blog'} do |f| %>
+        <%= f.text_field :title %>
+        <%= select_tag 'blog[category_id]', options_from_collection_for_select(@blog_categories, :id, :category_name) %>
+        <input type="button" value="画像を追加" />
+        <%= f.text_area :content %>
+        <%= f.submit %>
+			<% end %>
 		</div>
 	</div>
 </div>

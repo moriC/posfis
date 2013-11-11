@@ -77,5 +77,9 @@ Posfis::Application.routes.draw do
 
   namespace :manage do
   end
-  resources :manage 
+  resources :manage do
+    collection do
+      post 'create_blog'
+    end
+  end
 end
