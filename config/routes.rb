@@ -4,6 +4,7 @@ Posfis::Application.routes.draw do
     resources :friends
     resources :products
     resources :blogs
+    resources :settings
     resources :user_settings
   end
 
