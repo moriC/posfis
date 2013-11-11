@@ -1,0 +1,27 @@
+<div class="item w3">
+  <div class="artList">
+    <h2 class="bar">友達一覧</h2>
+    <div class="inner">  
+      <table>
+        <thead>
+          <tr>
+            <th>友達名</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @manage_friends.each do |manage_friend| %>
+            <tr>
+              <td><%= manage_friend.to_user_id %></td>
+              <td><%= link_to 'Show', manage_friend %></td>
+              <td><%= link_to 'Edit', edit_manage_friend_path(manage_friend) %></td>
+              <td><%= link_to 'Destroy', manage_friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>  
+    </div>
+  </div>
+</div>
