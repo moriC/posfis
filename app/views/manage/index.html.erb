@@ -17,76 +17,22 @@
 		<h2 class="bar">フィード</h2>
 		<div class="inner">
 			<table>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
+				<% @manage_blogs.each do |manage_blog| %>
+					<tr>
+						<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+						<td class="friendInfo">
+							<p class="date">2013年12月12日</p>
+							<h3 class="title"><%= manage_blog.title %></h3>
+							<p class="writer"><%= manage_blog.user_id %></p>
+						</td>
+						<td class="shareItem">
+							<ul>
+							<li class="star"><span class="icon icon-star-empty"></span></li>
+							<li><span class="icon icon-export"></span></li>
+							</ul>
+						</td> 
+					</tr>
+	      <% end %>
 			</table>
 		</div>
 	</div>

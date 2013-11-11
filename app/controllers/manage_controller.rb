@@ -3,5 +3,6 @@ class ManageController < ApplicationController
 	before_filter :authenticate_user!
 
 	def index
+		@manage_blogs = Manage::Blog.all
 	end
 end
