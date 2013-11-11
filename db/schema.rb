@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111043639) do
+ActiveRecord::Schema.define(version: 20131111045253) do
 
   create_table "manage_blog_categories", force: true do |t|
     t.string   "category_name"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20131111043639) do
     t.string   "title"
     t.text     "content"
     t.integer  "condition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "manage_friends", force: true do |t|
+    t.integer  "from_user_id"
+    t.integer  "to_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

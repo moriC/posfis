@@ -38,7 +38,11 @@
 				    	<span class="icon icon-home"></span><span class="tag">ホーム</span>
 						<% end %>
 					</li>
-					<li class="menu"><a href="friend.html"><span class="icon icon-users"></span><span class="tag">友達</span></a></li>
+					<li class="menu">
+						<%= link_to manage_friends_path do %>
+				    	<span class="icon icon-users"></span><span class="tag">友達</span>
+						<% end %>
+					</li>
 					<li class="menu">
 						<%= link_to manage_blogs_path do %>
 				    	<span class="icon icon-book-open"></span><span class="tag">記事管理</span>
