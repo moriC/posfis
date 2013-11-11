@@ -260,6 +260,15 @@ header{
 				border: solid 2px $mainColor;
 			}
 		}
+		
+		input[type="tel"]{
+			@extend input[type="text"];
+		}
+
+		input[type="checkbox"]{
+			display: inline;
+		}
+		
 		input[type="submit"]{
 			border: none;
 			//border: solid 1px darken(#fff, 20%);
@@ -572,6 +581,58 @@ header{
 		clear: both;
 	}
 	
+}
+
+
+
+
+
+/******************
+* 基本設定
+******************/
+.theme{
+	width: 100%;
+	padding: 10px;
+	
+	.themeImg{
+		width: 100%;
+		
+		img{
+			width: 100%;
+		}
+		
+	}
+	
+	.themeCnt{
+		width: 100%;
+		line-height: 1.8;
+	}
+}
+
+.availablethemes{
+	width: 100%;
+	padding: 10px;
+	@extend %clearfix;
+	
+	&:not(:last-child){	
+		border-bottom: dashed 1px $fontColor;
+	}
+	
+	.themeImg{
+		width: 50%;
+		float: left;
+	}
+	
+	.themeCnt{
+		width: 50%;
+		padding-left: 10px;
+		float: left;
+	}
+	
+	a{
+		color: $mainColor;
+		text-decoration: underline;
+	}
 }
 
 
