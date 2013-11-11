@@ -1,4 +1,4 @@
-class Manage::ProductsController < ApplicationController
+class Manage::ProductsController < ManageController
   before_action :set_manage_product, only: [:show, :edit, :update, :destroy]
 
   # GET /manage/products
