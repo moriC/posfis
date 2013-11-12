@@ -17,76 +17,22 @@
 		<h2 class="bar">フィード</h2>
 		<div class="inner">
 			<table>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
-				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-					<td class="friendInfo">
-						<p class="date">2013年12月12日</p>
-						<h3 class="title">タイトル</h3>
-						<p class="writer">森下智裕 / 農家</p>
-					</td>
-					<td class="shareItem">
-						<ul>
-						<li class="star"><span class="icon icon-star-empty"></span></li>
-						<li><span class="icon icon-export"></span></li>
-						</ul>
-					</td> 
-				</tr>
+				<% @manage_blogs.each do |manage_blog| %>
+					<tr>
+						<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+						<td class="friendInfo">
+							<p class="date"><%= format_date manage_blog.created_at %></p>
+							<h3 class="title"><%= manage_blog.title %></h3>
+							<p class="writer"><%= manage_blog.user.user_name %></p>
+						</td>
+						<td class="shareItem">
+							<ul>
+							<li class="star"><span class="icon icon-star-empty"></span></li>
+							<li><span class="icon icon-export"></span></li>
+							</ul>
+						</td> 
+					</tr>
+	      <% end %>
 			</table>
 		</div>
 	</div>
@@ -95,14 +41,13 @@
 	<div class="quick">
 		<h2 class="bar">クイック投稿</h2>
 		<div class="inner">
-			<form action="">
-				<input type="text" name="" id="" placeholder="タイトル" />
-				<select name="" id="">
-				<option value="カテゴリ">カテゴリ</option>
-				</select>
-				<textarea name="" id="" cols="30" rows="10"></textarea>
-				<input type="submit" value="投稿" />
-			</form>
+			<%= form_for @quick_blog, :url => {:action => 'create_blog'} do |f| %>
+        <%= f.text_field :title %>
+        <%= select_tag 'blog[category_id]', options_from_collection_for_select(@blog_categories, :id, :category_name) %>
+        <input type="button" value="画像を追加" />
+        <%= f.text_area :content %>
+        <%= f.submit %>
+			<% end %>
 		</div>
 	</div>
 </div>
