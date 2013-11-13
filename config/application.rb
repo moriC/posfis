@@ -26,3 +26,9 @@ module Posfis
     config.i18n.default_locale = :ja
   end
 end
+
+# Add the fonts path
+config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+# Precompile additional assets
+config.assets.precompile += %w( .svg .eot .woff .ttf )
