@@ -30,6 +30,8 @@ module Posfis
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+    Paperclip.options[:command_path] = "/usr/local/bin/"
   end
 end
 

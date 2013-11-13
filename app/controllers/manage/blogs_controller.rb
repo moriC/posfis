@@ -73,6 +73,6 @@ class Manage::BlogsController < ManageController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manage_blog_params
-      params.require(:manage_blog).permit(:user_id, :category_id, :title, :content, :condition)
+      params.require(:manage_blog).permit(:user_id, :category_id, :title, :content, :condition, :picture)
     end
 end

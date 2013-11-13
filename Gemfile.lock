@@ -223,6 +223,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   capybara (~> 2.1.0)
+  cocaine
   coffee-rails (~> 4.0.0)
   compass-rails!
   coveralls

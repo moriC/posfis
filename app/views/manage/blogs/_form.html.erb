@@ -15,7 +15,7 @@
       <%= form_for(@manage_blog) do |f| %>
         <%= f.text_field :title %>
         <%= select_tag 'blog[category_id]', options_from_collection_for_select(@blog_categories, :id, :category_name) %>
-        <input type="button" value="画像を追加" />
+        <%= f.file_field :picture %>
         <%= f.text_area :content %>
         <%= f.submit %>
       <% end %>
