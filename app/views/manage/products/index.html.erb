@@ -1,37 +1,44 @@
-<div class="item w3">
-  <div class="artList">
-    <h2 class="bar">商品一覧</h2>
-    <div class="inner">  
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <% @manage_products.each do |manage_product| %>
-            <tr>
-              <td><%= link_to 'Show', manage_product %></td>
-              <td><%= link_to 'Edit', edit_manage_product_path(manage_product) %></td>
-              <td><%= link_to 'Destroy', manage_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>    
-    </div>
-  </div>
+<div class="item w3">
+	<div class="productList">
+		<h2 class="bar">商品一覧</h2>
+		<div class="inner">
+				
+			<div class="box1">
+				<div class="artTitle">
+					<h3>
+						<a href="prdEdit.html">たこわさ</a>
+					</h3>
+				</div>
+				<div class="productImg">
+					<img src="img/takowasa.jpg" alt="" />
+				</div>
+				<div class="artLiInfo">
+					<div class="date"><p>2012年12月12日</p></div>
+					<div class="artMenu">
+					 <% @manage_products.each do |manage_product| %>
+						<ul>
+							<li><%= link_to 'Edit', edit_manage_product_path(manage_product) %></li>
+							<li><%= link_to 'Destroy', manage_product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+							<li><%= link_to 'Show', manage_product %></li>
+							<li class="status">公開</li>
+						</ul>
+					 <% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-    
+
 <div class="item w1">
-  <div class="newArt">
-    <h2 class="bar">新規登録</h2>
-    <div class="inner">
-      <ul>
-        <li><%= link_to 'New Product', new_manage_product_path %></li>
-      </ul>
-    </div>
-  </div>
+	<div class="newArt">
+		<h2 class="bar">記事メニュー</h2>
+		<div class="inner">
+			<ul>
+				 <li><%= link_to 'New Product', new_manage_product_path %></li>
+				<li><a href="dealerInfo.html">特定商取引表示</a></li>
+			</ul>
+		</div>
+	</div>
 </div>
