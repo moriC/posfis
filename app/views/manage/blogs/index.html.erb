@@ -5,7 +5,7 @@
 		<div class="inner">
 			<% @manage_blogs.each do |manage_blog| %>
 			<div class="box1">
-				<div class="artTitle"><a href="artEdit.html"><%= manage_blog.title %></a></div>
+				<div class="artTitle"><%= link_to manage_blog.title, manage_blog %></div>
 				<div class="artLiInfo">
 					<div class="date">
 						<p>2012年12月12日</p>
