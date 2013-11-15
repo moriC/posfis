@@ -1,0 +1,8 @@
+<div class="main">
+	<h1><%= @User.user_name %></h1>
+	<% if user_signed_in? %>
+  	<%= link_to '管理ページへ', manage_index_path %>
+  <% else %>
+  	<%= link_to 'トップページへ', tops_path %>
+	<% end  %>
+</div>
