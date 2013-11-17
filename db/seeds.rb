@@ -7,6 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 FactoryGirl.create :user
-FactoryGirl.create :userinfo
 FactoryGirl.create :manage_blog_category
 FactoryGirl.create :manage_blog
