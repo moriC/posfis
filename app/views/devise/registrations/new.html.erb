@@ -20,8 +20,15 @@
   <div><%= f.label :user_address %><br />
   <%= f.text_field :user_address %></div>
 
+  <div><%= f.label :user_type %><br />
+  お客様: <%= f.radio_button 'user_type', '1', {} %><br />
+  生産者の方: <%= f.radio_button 'user_type', '2', {} %><br />
+  業者の方: <%= f.radio_button 'user_type', '3', {} %></div>
+
   <div><%= f.label :avatar %><br />
   <%= f.file_field :avatar %></div>
+
+  <%= hidden_field_tag 'user[user_auth]', 1 %>
 
 
   <div><%= f.submit "Sign up" %></div>
