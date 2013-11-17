@@ -19,7 +19,7 @@
 			<table>
 				<% @manage_blogs.each do |manage_blog| %>
 					<tr>
-						<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+						<td class="face"><%= image_tag manage_blog.picture.url(:medium) %></td>
 						<td class="friendInfo">
 							<p class="date"><%= format_date manage_blog.created_at %></p>
 							<h3 class="title"><%= manage_blog.title %></h3>
@@ -44,7 +44,7 @@
 			<%= form_for @quick_blog, :url => {:action => 'create_blog'} do |f| %>
         <%= f.text_field :title %>
         <%= select_tag 'blog[category_id]', options_from_collection_for_select(@blog_categories, :id, :category_name) %>
-        <input type="button" value="画像を追加" />
+        <%= f.file_field :picture %>
         <%= f.text_area :content %>
         <%= f.submit %>
 			<% end %>

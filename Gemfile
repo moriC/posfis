@@ -66,3 +66,6 @@ gem 'coveralls', require: false
 gem 'i18n'
 
 gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
+
+gem 'paperclip'
+gem 'cocaine'

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_one :userinfo
+  accepts_nested_attributes_for :userinfo
   has_many :manage_blogs
 
   [:user_name, :user_type, :user_auth, :user_address_number, :user_address].each do |name|

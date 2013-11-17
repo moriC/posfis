@@ -1,0 +1,102 @@
+<header>
+	<h1><%= @User.user_name %></h1>
+	<div class="hlink">
+		<% if user_signed_in? %>
+		  <p><%= link_to '管理ページへ', manage_index_path %></p>
+		<% else %>
+		  <p><%= link_to 'トップページへ', tops_path %></p>
+		<% end  %>
+	</div>		
+</header>
+
+	<div class="contents">
+		<div class="container menus">
+		
+			<div class="item w2">
+				<div class="imgBox">
+					<img src="img/topImg.png" alt="" />
+				</div>
+				<nav>
+					<div class="navBox">
+						<ul>
+							<li class="menu info c1">
+								<a href="">
+									<span class="icon icon-user"></span>
+									<h2>情報</h2>
+									<p>広島県広島市</p>
+								</a>
+							</li>
+							<li class="menu goods c2">
+								<span class="icon icon-bag"></span>
+								<h2>販売</h2>
+								<p>3点</p>
+							</li>
+						</ul>
+					</div>
+					<div class="navBox">
+						<ul>
+							<li class="menu friends c3">
+								<span class="icon icon-users"></span>
+								<h2>友達</h2>
+								<p>21人</p>
+							</li>
+							<li class="menu pictures c4">
+								<span class="icon icon-picture"></span>
+								<h2>写真</h2>
+								<p>13枚</p>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			
+			<div class="item w1 c1">
+				<div class="imgBox">
+					<img src="img/redTomate.png" alt="" width="100%" />
+				</div>
+				<div class="inner">
+					<h2>トマトの収穫開始</h2>
+					<p>2013.07.17</p>
+					<p>トマトの収穫が始まりました。今年は雨が少なく身が小振りですが甘さがぎゅっと詰まったおいしいトマトです。水分が少なく焼きトマトなど火を通すとよりおいしくなります。</p>
+				</div>
+				<a class="more" href="">続きを読む</a>
+			</div>
+			
+			<div class="item w1 c2">
+				<div class="imgBox">
+					<img src="img/yellowTomate.png" alt="" width="100%" />
+				</div>
+				<div class="inner">
+					<h2>トマトが色づき始めました</h2>
+					<p>2013.06.22</p>
+					<p>今年は少し遅めですがトマトが色づき始めました。今年は去年より甘みの強いトマトになりそうです。赤みが増した頃に大雨が降らなければいいのですが。</p>
+				</div>
+				<a class="more" href="">続きを読む</a>
+			</div>
+			
+			<div class="item w1 c3">
+				<div class="imgBox">
+					<img src="img/vegetables.png" alt="" width="100%" />
+				</div>
+				<div class="inner">
+					<h2>野菜のまめ知識</h2>
+					<p>2013.06.15</p>
+					<p>野菜の豆知識だけに豆の豆知識を。国内の大豆需要量は、年間およそ400万トンで、そのうち大豆油用が約300万トン、食品用が約100万トンとなっています。食品用は、多い順に豆腐・油揚、味噌、納豆、醤油、豆乳 ......</p>
+				</div>
+				<a class="more" href="">続きを読む</a>
+			</div>
+			
+			<div class="item w1 c4">
+				<div class="imgBox">
+					<img src="img/lettuce.png" alt="" width="100%" />
+				</div>
+				<div class="inner">
+					<h2>レタスがおいしい</h2>
+					<p>2013.06.01</p>
+					<p>レタスを収穫を週末に控え、1つをとり食べてみたところシャキシャキとしていいレタスができました。皆様のお手元に届くまでもうしばしお待ちください。</p>
+				</div>
+				<a class="more" href="">続きを読む</a>
+			</div>
+			
+		</div>
+	</div>
