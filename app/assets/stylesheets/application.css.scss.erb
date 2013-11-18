@@ -14,11 +14,11 @@
 
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?60006561');
-  src: url('../font/fontello.eot?60006561#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff?60006561') format('woff'),
-       url('../font/fontello.ttf?60006561') format('truetype'),
-       url('../font/fontello.svg?60006561#fontello') format('svg');
+  src: url('<%= asset_path('fontello.eot') %>');
+  src: url('<%= asset_path('fontello.eot') + '?#iefix' %>') format('embedded-opentype'),
+       url('<%= asset_path('fontello.woff') %>') format('woff'),
+       url('<%= asset_path('fontello.ttf') %>') format('truetype'),
+       url('<%= asset_path('fontello.svg') %>') format('svg');
   font-weight: normal;
   font-style: normal;
 }
