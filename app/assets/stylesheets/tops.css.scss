@@ -3,8 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @charset "UTF-8";
-@import "compass";
-@import "compass/reset";
 
 $menuColor: #ffffff;
 $mainColor: #4ed39c;
@@ -12,6 +10,14 @@ $baceColor: #f8f5ec;
 $fontColor: #858585;
 $accentColor: #ef5348;
 $barColor: #4ed39c;
+
+$infoColor: #abd47b;
+$goodsColor: #ff605a;
+$friendsColor: #75d6b5;
+$picturesColor: #85acb6;
+
+@import "compass";
+@import "compass/reset";
 
 %clearfix {
 	*zoom: 1;
@@ -30,7 +36,11 @@ $barColor: #4ed39c;
 	}
 }
 
-/*▼ 共通 ▼*/
+@mixin gradient-top-lighten($color:#666, $lighten:10%){
+  background-color: $color;
+  @include filter-gradient(lighten($color, $lighten), $color, vertical);
+  @include background-image(linear-gradient(lighten($color, $lighten) 0%, $color 100%));
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -59,7 +69,8 @@ h1{
 	font-size: 150%;
 }
 h2{
-	font-size: 120%;
+	font-size: 140%;
+	font-weight: bold;
 }
 h3{
 	font-size: 110%;
@@ -69,45 +80,299 @@ h4{
 }
 
 a{
-	color: $fontColor;
 	text-decoration: none;
 }
 
-img{
-	vertical-align: text-bottom;
-}
-
-.item:not(.nav){
+/***** contents *****/
+header{
+	width: 100%;
+	min-width: 1010px;
+	padding: 10px;
+	@include gradient-top-lighten(#333,5%);
+	@extend %clearfix;
 	
-	a{
-		color: $mainColor;
-		text-decoration: underline;
-		
-		&:hover{
-			text-decoration: none;
-			opacity: .7;
-		}
-	}
-}
-
-/*▲ 共通 ▲*/
-
-.main{
-	font-family: sans-serif;
-	text-align: center;
 	h1{
-		font-size: 200%;
-		font-weight: bold;
+		display: block;
+		width: 30%;
+		float: left;
+		color: #fff;
 	}
 	
-	a{
-		font-size: 140%;
-		text-decoration: underline;
+	.hlink{
+		width: 70%;
+		float: left;
+		text-align: right;
 		
-		&:hover{
-			text-decoration: none;
-			opacity: .7;
+		a{
+			color: $goodsColor;
 		}
 	}
 }
+
+
+/***** contents *****/
+.contents{
+	max-width: 1010px;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+.container{
+	max-width: 1000px;
+	margin: 0 auto;
+	@extend %clearfix;
+}
+
+/***** item *****/
+.item {	
+	margin: 10px;
+	color: #fff;
+	background-color: #fff;
+	@include box-shadow(0 0 5px #a9a9a9);
+	float: left;
+	
+	img{
+		width: 100%;
+		height: auto;
+	}
+	
+	.inner{
+		padding: 10px;
+	}
+	
+	.more{
+		display: block;
+		width: 100%;
+		padding: 10px;
+		font-size: 18px;
+		color: #fff;
+		text-decoration: none;
+		text-align: center;
+	}
+}
+
+/***** item colors *****/
+.c1{
+	background-color: $infoColor;
+	
+	.more{
+		background-color: darken($infoColor, 15%);
+		
+		&:hover{
+			background-color: lighten($infoColor, 5%);
+		}
+	}
+}
+
+.c2{
+	background-color: $goodsColor;
+	
+	.more{
+		background-color: darken($goodsColor, 15%);
+		
+		&:hover{
+			background-color: lighten($goodsColor, 5%);
+		}
+	}
+}
+
+.c3{
+	background-color: $friendsColor;
+	
+	.more{
+		background-color: darken($friendsColor, 15%);
+		
+		&:hover{
+			background-color: lighten($friendsColor, 5%);
+		}
+	}
+}
+
+.c4{
+	background-color: $picturesColor;
+	
+	.more{
+		background-color: darken($picturesColor, 15%);
+		
+		&:hover{
+			background-color: lighten($picturesColor, 5%);
+		}
+	}
+}
+
+/***** item size *****/
+.w1{
+	width: 200px;
+	height: auto;
+}
+
+.w2{
+	width: 420px;	
+	height: auto;
+}
+
+.w3{
+	width: 640px;	
+	height: auto;
+}
+
+.w4{
+	width: 860px;	
+	height: auto;
+}
+
+.imgBox{
+	
+	img{
+		vertical-align: bottom;
+	}
+}
+
+nav{
+	@extend %clearfix;
+}
+
+.navBox{
+	width: 210px;
+	height: 105px;
+	float: left;
+	
+	ul{
+		@extend %clearfix;
+	}
+}
+
+.menu{
+	width: 105px;
+	height: 105px;
+	padding-top: 15px;
+	color: #fff;
+	text-align: center;
+	line-height: 1.3;
+	float: left;
+	
+	a{
+		display: block;
+		color: #fff;
+	}
+	
+	.icon{
+		font-size: 200%;
+	}
+	
+	p{
+		font-size: 15px;
+	}
+	
+}
+
+.goodsInfo{
+	.goodsName{
+		font-size: 190%;
+	}
+	
+	.goodsDetail{
+		font-size: 110%;
+		line-height: 1.8;
+	}
+	.price{
+		font-size: 140%;
+	}
+}
+
+
+
+
+/************************************
+* レスポンシブ対応は基本的に
+* masonry.jsがするので触る必要なし
+************************************/
+
+
+
+/******************
+* media query / tablet
+******************/
+@media screen and (max-width: 800px) {
+	
+	.w4{
+		width: 580px;
+	}
+	
+	.w3{
+		width: 580px;
+	}
+}
+
+
+
+/******************
+* media query / smartphone
+******************/
+
+@media screen and (max-width: 610px) {
+
+	.box{
+		padding: 5px;
+	}
+	.container{
+		width: auto !important;
+	}
+	
+	.w1{
+		width: 100%;
+		height: auto;
+	}
+	
+	.w2{
+		width: 100%;
+		height: auto;
+	}
+	
+	.w3{
+		width: 100%;
+		height: auto;
+	}
+	
+	.w4{
+		width: 100%;
+		height: auto;
+	}
+	
+	
+	.item {	
+		margin: 5px 0;
+		@include box-shadow(0 0 0 #000);
+		
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	.navBox{
+		width: 100%;
+		height: auto;
+		background-color: aqua;
+		float: none;
+	}
+	
+	.menu{
+		width: 50%;
+		height: auto;
+		padding: 20px 0;
+		
+		.icon{
+			font-size: 300%;
+		}
+		
+		h2,p{
+			display: none;
+		}
+	}
+}
+
+
+
+
 

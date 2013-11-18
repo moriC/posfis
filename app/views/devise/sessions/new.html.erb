@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "registrations/registrations", :media => "all" %>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-<div class="contents">
+<div class="login-contents">
 	<p><span class="icon-lock"></span></p>
 	<%= f.text_field :email, :autofocus => true, :value => "posfis@dev.com" %>
 	<%= f.password_field :password, :value => "posfisdev" %>
