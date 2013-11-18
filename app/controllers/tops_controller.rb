@@ -1,4 +1,5 @@
-class TopsController < ApplicationController
+class TopsController < ActionController::Base
+	layout 'tops'
 	before_action :set_params, only: [:show]
 
 
