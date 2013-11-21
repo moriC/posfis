@@ -1,16 +1,27 @@
 <%= form_for(@manage_product) do |f| %>
-  <% if @manage_product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@manage_product.errors.count, "error") %> prohibited this manage_product from being saved:</h2>
+  
+  <%= f.text_field :product_name, :placeholder => "商品名" %>
 
-      <ul>
-      <% @manage_product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <select name="カテゴリ" id="">
+          <option value="カテゴリゴリ">カテゴリ</option>
+        </select>
+  <%= f.text_field :price, :placeholder => "通常価格" %>
+  <%= f.text_field :sp_price, :placeholder => "特別価格(任意)" %>
+  <%= f.text_field :count, :placeholder => "在庫数" %>
+  <%= f.text_field :delivery_fee, :placeholder => "送料" %>
 
+        <select name="発送目安" id="">
+          <option value="発送日目安">発送日目安</option>
+          <option value="即日">即日</option>
+          <option value="1日以内">1日以内</option>
+          <option value="2日以内">2日以内</option>
+          <option value="1週間以内">1週間以内</option>
+          <option value="1ヶ月以内">1ヶ月以内</option>
+          <option value="お取り寄せ">お取り寄せ</option>
+          <option value="品切れ中">品切れ中</option>
+        </select>
+  <%= f.file_field :picture %>
+  <%= f.text_area :contents, :placeholder => "商品説明", :size => "20x10" %>
   <div class="actions">
     <%= f.submit %>
   </div>

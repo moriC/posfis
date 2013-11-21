@@ -1,34 +1,8 @@
-
 <div class="item w3">
 	<div class="quick edit">
-		<h2 class="bar">記事一覧</h2>
+		<h2 class="bar">新規商品登録</h2>
 		<div class="inner">
-		
-			<form action="">
-				<input type="text" name="" id="" placeholder="商品名" />
-				<select name="カテゴリ" id="">
-					<option value="カテゴリゴリ">カテゴリ</option>
-				</select>
-				<input type="text" name="" id="" placeholder="通常価格" />
-				<input type="text" name="" id="" placeholder="特別価格(任意)" />
-				<input type="text" name="" id="" placeholder="在庫数" />
-				<input type="text" name="" id="" placeholder="送料" />
-				<select name="発送目安" id="">
-					<option value="発送日目安">発送日目安</option>
-					<option value="即日">即日</option>
-					<option value="1日以内">1日以内</option>
-					<option value="2日以内">2日以内</option>
-					<option value="1週間以内">1週間以内</option>
-					<option value="1ヶ月以内">1ヶ月以内</option>
-					<option value="お取り寄せ">お取り寄せ</option>
-					<option value="品切れ中">品切れ中</option>
-				</select>
-				<input type="button" value="画像を追加" />
-				<textarea name="" id="" cols="30" rows="10" placeholder="商品説明"></textarea>
-				<%= render 'form' %>
-				<input type="submit" value="保存して登録" />
-			</form>
-			
+			<%= render 'form' %>
 		</div>
 	</div>
 </div>
@@ -38,7 +12,7 @@
 		<h2 class="bar">ステータス</h2>
 		<div class="inner">
 			<ul>
-				<li class="status"><%= render 'form' %></li>
+				<li class="status"></li>
 				<li><%= link_to 'Back', manage_products_path %></li>
 			</ul>
 		</div>
