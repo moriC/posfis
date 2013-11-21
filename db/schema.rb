@@ -13,23 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131113100837) do
 
-  create_table "blog_categories", force: true do |t|
-    t.string   "category_name"
-    t.integer  "condition"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "blogs", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "category_id"
-    t.string   "title"
-    t.text     "contents"
-    t.integer  "condition"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "manage_blog_categories", force: true do |t|
     t.string   "category_name"
     t.integer  "condition"
@@ -59,6 +42,19 @@ ActiveRecord::Schema.define(version: 20131113100837) do
   end
 
   create_table "manage_products", force: true do |t|
+    t.integer  "product_id"
+    t.string   "product_name"
+    t.integer  "price"
+    t.integer  "sp_price"
+    t.integer  "count"
+    t.integer  "delivery_fee"
+    t.integer  "delivery_type_id"
+    t.text     "contents"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "condition"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
