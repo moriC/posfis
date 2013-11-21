@@ -9,3 +9,6 @@
 FactoryGirl.create :user
 FactoryGirl.create :manage_blog_category
 FactoryGirl.create :manage_blog
+FactoryGirl.create :delivery_type, type_name: "hoge"
+FactoryGirl.create :delivery_type, type_name: "mogu"
+FactoryGirl.create :delivery_type, type_name:"goro"
