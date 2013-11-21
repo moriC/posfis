@@ -1,8 +1,8 @@
 class CreateManageProducts < ActiveRecord::Migration
   def change
     create_table :manage_products do |t|
-      t.integer :product_id
       t.string :product_name
+      t.integer :product_type_id
       t.integer :price
       t.integer :sp_price
       t.integer :count
