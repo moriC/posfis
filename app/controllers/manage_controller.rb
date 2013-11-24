@@ -3,7 +3,8 @@ class ManageController < ApplicationController
 	before_filter :authenticate_user!
 
 	def index
-		@manage_blogs = Manage::Blog.order("created_at DESC").take(5)
+		friends = Manage::Friend.select("to_user_id").where(:from_user_id => current_user.id)
+    @manage_blogs = Manage::Blog.where(:user_id => friends).order("created_at DESC").take(5)
 		@quick_blog = Manage::Blog.new
 		@blog_categories = Manage::BlogCategories.all
 	end

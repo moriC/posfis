@@ -4,6 +4,8 @@ class Manage::FriendsController <  ManageController
   # GET /manage/friends
   # GET /manage/friends.json
   def index
+    friends = Manage::Friend.select("to_user_id").where(:from_user_id => current_user.id)
+    @friends_blogs = Manage::Blog.where(:user_id => friends)
     @users = User.where.not( id: [current_user.id], user_type: [3, 4])
     @manage_friends = Manage::Friend.all
   end
