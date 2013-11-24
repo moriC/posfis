@@ -4,7 +4,7 @@ class Manage::BlogsController < ManageController
   # GET /manage/blogs
   # GET /manage/blogs.json
   def index
-    @manage_blogs = Manage::Blog.all
+    @manage_blogs = Manage::Blog.where(:user_id => current_user.id)
   end
 
   # GET /manage/blogs/1
