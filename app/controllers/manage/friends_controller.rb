@@ -7,7 +7,7 @@ class Manage::FriendsController <  ManageController
     friends = Manage::Friend.select("to_user_id").where(:from_user_id => current_user.id)
     @friends_blogs = Manage::Blog.where(:user_id => friends)
     @users = User.where.not( id: [current_user.id], user_type: [3, 4])
-    @manage_friends = Manage::Friend.all
+    @manage_friends = Manage::Friend.where(:to_user_id => friends)
   end
 
   # GET /manage/friends/1

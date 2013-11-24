@@ -38,7 +38,7 @@
 							<li class="menu friends c3">
 								<span class="icon icon-users"></span>
 								<h2>友達</h2>
-								<p>21人</p>
+								<p><%= @friends.count %>人</p>
 							</li>
 							<li class="menu pictures c4">
 								<span class="icon icon-picture"></span>
@@ -49,54 +49,20 @@
 					</div>
 				</nav>
 			</div>
-			
-			<div class="item w1 c1">
-				<div class="imgBox">
-					<img src="img/redTomate.png" alt="" width="100%" />
+
+			<% @blogs.each do |blog| %>
+				<div class="item w1 c1">
+					<div class="imgBox">
+						<img src="img/redTomate.png" alt="" width="100%" />
+					</div>
+					<div class="inner">
+						<h2><%= blog.title %></h2>
+						<p><%= format_date blog.created_at %></p>
+						<p><%= blog.content %></p>
+					</div>
+					<%= link_to '続きを読む', manage_blog_path, :class => "more" %> 
 				</div>
-				<div class="inner">
-					<h2>トマトの収穫開始</h2>
-					<p>2013.07.17</p>
-					<p>トマトの収穫が始まりました。今年は雨が少なく身が小振りですが甘さがぎゅっと詰まったおいしいトマトです。水分が少なく焼きトマトなど火を通すとよりおいしくなります。</p>
-				</div>
-				<a class="more" href="">続きを読む</a>
-			</div>
-			
-			<div class="item w1 c2">
-				<div class="imgBox">
-					<img src="img/yellowTomate.png" alt="" width="100%" />
-				</div>
-				<div class="inner">
-					<h2>トマトが色づき始めました</h2>
-					<p>2013.06.22</p>
-					<p>今年は少し遅めですがトマトが色づき始めました。今年は去年より甘みの強いトマトになりそうです。赤みが増した頃に大雨が降らなければいいのですが。</p>
-				</div>
-				<a class="more" href="">続きを読む</a>
-			</div>
-			
-			<div class="item w1 c3">
-				<div class="imgBox">
-					<img src="img/vegetables.png" alt="" width="100%" />
-				</div>
-				<div class="inner">
-					<h2>野菜のまめ知識</h2>
-					<p>2013.06.15</p>
-					<p>野菜の豆知識だけに豆の豆知識を。国内の大豆需要量は、年間およそ400万トンで、そのうち大豆油用が約300万トン、食品用が約100万トンとなっています。食品用は、多い順に豆腐・油揚、味噌、納豆、醤油、豆乳 ......</p>
-				</div>
-				<a class="more" href="">続きを読む</a>
-			</div>
-			
-			<div class="item w1 c4">
-				<div class="imgBox">
-					<img src="img/lettuce.png" alt="" width="100%" />
-				</div>
-				<div class="inner">
-					<h2>レタスがおいしい</h2>
-					<p>2013.06.01</p>
-					<p>レタスを収穫を週末に控え、1つをとり食べてみたところシャキシャキとしていいレタスができました。皆様のお手元に届くまでもうしばしお待ちください。</p>
-				</div>
-				<a class="more" href="">続きを読む</a>
-			</div>
+			<% end %> 
 			
 		</div>
 	</div>
