@@ -67,16 +67,18 @@
 					</td>
 				</tr>
 				<a href="">
-					<tr>
-						<td class="face"><img src="img/moriC.jpg" alt="" /></td>
-						<td class="friendInfo">
-							<h3>森下智裕</h3>
-							<p class="belong">農家</p>
-						</td>
-						<td class="newFriends">
-							<a href="">友達になる</a>
-						</td>
-					</tr>
+					<% @users.each do |user| %>
+						<tr>
+							<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+							<td class="friendInfo">
+								<h3><%= user.user_name %></h3>
+								<p class="belong"><%= format_user_type user.user_type %></p>
+							</td>
+							<td class="newFriends">
+								<a href="">友達になる</a>
+							</td>
+						</tr>
+					<% end %>
 				</a>
 			</table>
 		</div>
