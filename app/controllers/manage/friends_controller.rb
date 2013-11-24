@@ -62,6 +62,16 @@ class Manage::FriendsController <  ManageController
     end
   end
 
+
+  # 友達追加
+  def add_friend
+    to_friend_user_id = params[:id]
+    @friend = Manage::Friend.new
+    @friend.from_user_id = current_user.id
+    @friend.to_user_id = to_friend_user_id
+    @friend.save
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_manage_friend

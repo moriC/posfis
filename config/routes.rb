@@ -1,7 +1,11 @@
 Posfis::Application.routes.draw do
   
   namespace :manage do
-    resources :friends
+    resources :friends do
+      member do
+        get 'add_friend'
+      end
+    end
     resources :products
     resources :blogs
     resources :trades do
