@@ -6,7 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-FactoryGirl.create :user
+FactoryGirl.create :user, user_type: 4
+FactoryGirl.create :user, email: "posfis@dev1.com", user_type: 1, user_name: "消費者A"
+FactoryGirl.create :user, email: "posfis@dev2.com", user_type: 2, user_name: "生産者B"
+FactoryGirl.create :user, email: "posfis@dev3.com", user_type: 3, user_name: "業者C"
 FactoryGirl.create :manage_blog_category
 FactoryGirl.create :manage_blog
 FactoryGirl.create :delivery_type, type_name: "hoge"
