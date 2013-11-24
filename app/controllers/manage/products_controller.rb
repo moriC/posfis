@@ -69,6 +69,6 @@ class Manage::ProductsController < ManageController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manage_product_params
-      params[:manage_product]
+      params.require(:manage_product).permit(:product_name, :product_type_id, :price, :sp_price, :count, :delivery_fee, :delivery_type_id, :picture, :contents)
     end
 end
