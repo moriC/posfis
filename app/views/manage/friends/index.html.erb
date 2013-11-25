@@ -75,7 +75,7 @@
 								<p class="belong"><%= format_user_type user.user_type %></p>
 							</td>
 							<td class="newFriends">
-								<%= link_to '友達になる', "/manage/friends/#{user.id}/add_friend" ,:remote => true %>
+								<p><%= link_to '友達になる', "/manage/friends/#{user.id}/add_friend" ,:remote => true %></p>
 							</td>
 						</tr>
 					<% end %>
