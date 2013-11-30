@@ -69,3 +69,5 @@ gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
 
 gem 'paperclip'
 gem 'cocaine'
+
+gem 'paypal-express'
