@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20131201085729) do
   create_table "manage_products", force: true do |t|
     t.string   "product_name"
     t.integer  "product_type_id"
+    t.integer  "user_id"
     t.integer  "price"
     t.integer  "sp_price"
     t.integer  "count"

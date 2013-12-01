@@ -5,27 +5,27 @@
 		<div class="inner">
 				
 			<div class="box1">
+				<% @manage_products.each do |manage_product| %>
 				<div class="artTitle">
 					<h3>
-						<a href="prdEdit.html">たこわさ</a>
+						<%= link_to manage_product.product_name, edit_manage_product_path(manage_product) %>
 					</h3>
 				</div>
 				<div class="productImg">
-					<img src="img/takowasa.jpg" alt="" />
+					<%= image_tag manage_product.picture.url(:medium) %>
 				</div>
 				<div class="artLiInfo">
-					<div class="date"><p>2012年12月12日</p></div>
+					<div class="date"><p><%= format_date manage_product.created_at %></p></div>
 					<div class="artMenu">
-					 <% @manage_products.each do |manage_product| %>
 						<ul>
 							<li><%= link_to 'Edit', edit_manage_product_path(manage_product) %></li>
 							<li><%= link_to 'Destroy', manage_product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 							<li><%= link_to 'Show', manage_product %></li>
 							<li class="status">公開</li>
 						</ul>
-					 <% end %>
 					</div>
 				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

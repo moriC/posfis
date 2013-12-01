@@ -4,7 +4,7 @@ class Manage::ProductsController < ManageController
   # GET /manage/products
   # GET /manage/products.json
   def index
-    @manage_products = Manage::Product.all
+    @manage_products = Manage::Product.where(:user_id => current_user.id)
   end
 
   # GET /manage/products/1
@@ -25,6 +25,7 @@ class Manage::ProductsController < ManageController
   # POST /manage/products.json
   def create
     @manage_product = Manage::Product.new(manage_product_params)
+    @manage_product.user_id = current_user.id
 
     respond_to do |format|
       if @manage_product.save
@@ -69,6 +70,6 @@ class Manage::ProductsController < ManageController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manage_product_params
-      params.require(:manage_product).permit(:product_name, :product_type_id, :price, :sp_price, :count, :delivery_fee, :delivery_type_id, :picture, :contents)
+      params.require(:manage_product).permit(:product_name, :product_type_id, :price, :sp_price, :count, :delivery_fee, :delivery_type_id, :contents, :picture)
     end
 end
