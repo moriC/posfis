@@ -1,12 +1,10 @@
 <%= form_for(@manage_product) do |f| %>
   
   <%= f.text_field :product_name, :placeholder => "商品名" %>
-  <%= f.collection_select :product_type_id, ProductType.all, :id, :type_name %>
   <%= f.text_field :price, :placeholder => "通常価格" %>
   <%= f.text_field :sp_price, :placeholder => "特別価格(任意)" %>
   <%= f.text_field :count, :placeholder => "在庫数" %>
   <%= f.text_field :delivery_fee, :placeholder => "送料" %>
-  <%= f.collection_select :delivery_type_id, DeliveryType.all, :id, :type_name %>
   <%= f.file_field :picture %>
   <%= f.text_area :contents, :placeholder => "商品説明", :size => "20x10" %>
   <div class="actions">

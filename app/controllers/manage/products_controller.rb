@@ -27,29 +27,21 @@ class Manage::ProductsController < ManageController
     @manage_product = Manage::Product.new(manage_product_params)
     @manage_product.user_id = current_user.id
 
-    respond_to do |format|
-      if @manage_product.save
-        format.html { redirect_to @manage_product, notice: 'Product was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @manage_product }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @manage_product.errors, status: :unprocessable_entity }
-      end
+    if @manage_product.save
+      redirect_to manage_product_path
+    else
+      redirect_to new_manage_product_path
     end
   end
 
   # PATCH/PUT /manage/products/1
   # PATCH/PUT /manage/products/1.json
   def update
-    respond_to do |format|
       if @manage_product.update(manage_product_params)
-        format.html { redirect_to @manage_product, notice: 'Product was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to manage_products_path
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @manage_product.errors, status: :unprocessable_entity }
+        redirect_to edit_manage_product_path(@manage_product)
       end
-    end
   end
 
   # DELETE /manage/products/1
