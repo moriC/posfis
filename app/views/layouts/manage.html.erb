@@ -37,7 +37,9 @@
 						<% end %>
 					</li>
 					<li class="menu">
+						<%= link_to "/tops/#{current_user.id}" do %>
 				    	<span class="icon icon-home"></span><span class="tag">Webページへ</span>
+				    <% end %>
 					</li>
 					<li class="menu">
 						<%= link_to manage_friends_path do %>
