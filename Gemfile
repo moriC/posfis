@@ -71,3 +71,4 @@ gem 'paperclip'
 gem 'cocaine'
 
 gem 'paypal-express'
+gem 'activemerchant'

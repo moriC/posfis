@@ -31,4 +31,13 @@ Posfis::Application.configure do
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  ActiveMerchant::Billing::Base.mode = :test
+  paypal_options = {
+    :login => "tarai6666-facilitator_api1.gmail.com",
+    :password => "1385821094",
+    :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AgpbS4ZXuDf6avcKhaIegN8QyIar"
+  }
+  ::STANDARD_GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(paypal_options)
+  ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
 end
