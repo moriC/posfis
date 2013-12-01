@@ -13,6 +13,11 @@ Posfis::Application.routes.draw do
         get 'history'
       end
     end
+    resources :orders do
+      collection do
+        get 'history'
+      end
+    end
     resources :settings
     resources :user_settings
   end

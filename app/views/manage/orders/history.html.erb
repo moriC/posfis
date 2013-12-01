@@ -1,0 +1,32 @@
+<div class="item w3">
+	<div class="productList">
+		<h2 class="bar">買物履歴</h2>
+		<div class="inner">
+			<% @orders.each do |order| %>
+			<div class="box1">
+				<div class="artTitle">
+					<h3>
+						<%= link_to order.product.product_name, "/manage/products/#{order.product_id}" %>
+					</h3>
+				</div>
+				<div class="productImg">
+					<%= image_tag order.product.picture.url(:medium) %>
+				</div>
+				<div class="artLiInfo">
+					<div class="date"><p><%= format_date order.created_at %></p></div>
+					<div class="artMenu">
+						<ul>
+							<% if (order.product.count > 0) %>
+							<li><a href="../farmerBlog/goodsInfo.html">再注文</a></li>
+							<% else %>
+							<li>品切れ中</li>
+							<% end %>
+							<li><a href="../farmerBlog/goodsInfo.html">詳細表示</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<% end %>		
+		</div>
+	</div>
+</div>
