@@ -9,5 +9,8 @@ class User < ActiveRecord::Base
 
 	has_many :manage_friends_asso, :class_name => 'Manage::Friend', :foreign_key => :from_user_id
   has_many :manage_friends, :through => :manage_friends_asso, :source => :to_user_id
+
+  has_many :orders_asso, :class_name => 'Order', :foreign_key => :buyer_user_id
+  has_many :orders, :through => :orders_asso, :source => :business_user_id
   
 end

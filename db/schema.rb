@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121054409) do
+ActiveRecord::Schema.define(version: 20131201085729) do
 
   create_table "delivery_types", force: true do |t|
     t.string   "type_name"
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 20131121054409) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.integer  "condition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "buyer_user_id"
+    t.string   "business_user_id_integer"
+    t.integer  "product_id"
+    t.string   "express_token"
+    t.string   "express_payer_id"
     t.integer  "condition"
     t.datetime "created_at"
     t.datetime "updated_at"
