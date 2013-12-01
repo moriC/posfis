@@ -2,6 +2,9 @@
 	<div class="quick">
 		<h2 class="bar">ユーザ設定</h2>
 		<div class="inner users">
+			<%= form_tag('/user_settings/edit') do |f| %>
+				<%= f.text_field :user_name @user.user_name %>
+			<% end %>
 			<form action="">
 				<label for="siteTitle">名前</label>
 				<input type="text" name="" id="siteTitle" />
