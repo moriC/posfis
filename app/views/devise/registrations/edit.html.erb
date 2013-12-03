@@ -11,10 +11,10 @@
         <div><%= f.label :email, 'メールアドレス' %><br />
         <%= f.email_field :email %></div>
 
-        <div><%= f.label :user_address_number %><br />
+        <div><%= f.label :user_address_number, "郵便番号" %><br />
         <%= f.text_field :user_address_number %></div>
 
-        <div><%= f.label :user_address %><br />
+        <div><%= f.label :user_address, "住所" %><br />
         <%= f.text_field :user_address %></div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -26,8 +26,12 @@
 
         <div><%= f.label :password_confirmation, '新しいパスワードの確認' %><br />
         <%= f.password_field :password_confirmation %></div>
-
-        <div><%= f.label :current_password, '変更前のパスワード' %> <i>(変更時に必須です)</i><br />
+		
+		
+		<br />
+		<br />
+		<p style="color:red">※設定の変更を保存するにはパスワードの入力が必要です。</p>
+        <div><%= f.label :current_password, 'パスワードの入力' %> <br />
         <%= f.password_field :current_password %></div>
 
         <div><%= f.submit "更新" %></div>

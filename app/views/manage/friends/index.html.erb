@@ -40,9 +40,9 @@
 					</td>
 				</tr>
 				<tr>
-					<td><%= link_to 'Show', manage_friend %></td>
-					<td><%= link_to 'Edit', edit_manage_friend_path(manage_friend) %></td>
-					<td><%= link_to 'Destroy', manage_friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					<!-- <td><%= link_to 'Show', manage_friend %></td> -->
+					<!-- <td><%= link_to '編集', edit_manage_friend_path(manage_friend) %></td> -->
+					<td><%= link_to 'フォロー解除', manage_friend, method: :delete, data: { confirm: 'フォローを解除しますか？' } %></td>
 				</tr>
 				<% end %>
 			</tbody>

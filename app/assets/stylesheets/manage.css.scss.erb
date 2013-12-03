@@ -17,30 +17,6 @@
   font-style: normal;
 }
 
-$menuColor: #ffffff;
-$mainColor: #4ed39c;
-$baceColor: #f8f5ec;
-$fontColor: #858585;
-$accentColor: #ef5348;
-$barColor: #4ed39c;
-
-%clearfix {
-	*zoom: 1;
-}
-%clearfix:after {
-	content: '';
-	display: block;
-	clear : both;
-	height: 0;
-}
-@media print {  
-	%clearfix:after {    
-		height: 1px;    
-		margin-bottom: -1px;
-		visibility: hidden;	
-	}
-}
-
 @charset "UTF-8";
 @import "compass";
 @import "compass/reset";
@@ -336,6 +312,10 @@ header{
 				outline: 0;
 				border: solid 2px $mainColor;
 			}
+		}
+		
+		input[type="password"]{
+			@extend input[type="text"];
 		}
 		
 		input[type="tel"]{

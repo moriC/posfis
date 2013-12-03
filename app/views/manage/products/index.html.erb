@@ -18,9 +18,9 @@
 					<div class="date"><p><%= format_date manage_product.created_at %></p></div>
 					<div class="artMenu">
 						<ul>
-							<li><%= link_to 'Edit', edit_manage_product_path(manage_product) %></li>
-							<li><%= link_to 'Destroy', manage_product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-							<li><%= link_to 'Show', manage_product %></li>
+							<li><%= link_to '編集', edit_manage_product_path(manage_product) %></li>
+							<li><%= link_to '削除', manage_product, method: :delete, data: { confirm: '削除しますか?' } %></li>
+							<!-- <li><%= link_to 'Show', manage_product %></li> -->
 							<li class="status">公開</li>
 						</ul>
 					</div>
@@ -36,7 +36,7 @@
 		<h2 class="bar">記事メニュー</h2>
 		<div class="inner">
 			<ul>
-				 <li><%= link_to 'New Product', new_manage_product_path %></li>
+				 <li><%= link_to '商品登録', new_manage_product_path %></li>
 				<li><a href="dealerInfo.html">特定商取引表示</a></li>
 			</ul>
 		</div>

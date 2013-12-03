@@ -42,11 +42,13 @@
 		<h2 class="bar">クイック投稿</h2>
 		<div class="inner">
 			<%= form_for @quick_blog, :url => {:action => 'create_blog'} do |f| %>
-        <%= f.text_field :title %>
-        <%= select_tag 'blog[category_id]', options_from_collection_for_select(@blog_categories, :id, :category_name) %>
-        <%= f.file_field :picture %>
-        <%= f.text_area :content %>
-        <%= f.submit %>
+		        <label for="manage_blog_title">記事のタイトル</label>
+		        <%= f.text_field :title %>
+		        <!-- <%= select_tag 'blog[category_id]', options_from_collection_for_select(@blog_categories, :id, :category_name) %> -->
+		        <%= f.file_field :picture %>
+		         <label for="manage_blog_content">本文</label>
+		        <%= f.text_area :content %>
+		        <%= f.submit %>
 			<% end %>
 		</div>
 	</div>
@@ -67,6 +69,7 @@
 <script src="js/IE9.js"></script>
 <![endif]-->
 
+<!--
 <script>
 	//アクセスグラフ
 	var lineChartData = {
@@ -83,3 +86,4 @@
 	}
 	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
 </script>
+-->

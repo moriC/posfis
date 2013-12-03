@@ -10,12 +10,15 @@
         </ul>
       </div>
     <% end %>
-    <h2 class="bar">記事一覧</h2>
+    <h2 class="bar">記事管理</h2>
     <div class="inner">
       <%= form_for(@manage_blog) do |f| %>
+      	<label for="manage_blog_title">タイトル</label>
         <%= f.text_field :title %>
+        <label for="picture">画像の挿入</label>
         <%= f.file_field :picture %>
-        <%= f.collection_select :category_id, Manage::BlogCategories.all, :id, :category_name, :class => "minict_wrapper active" %>
+        <!-- <%= f.collection_select :category_id, Manage::BlogCategories.all, :id, :category_name, :class => "minict_wrapper active" %> -->
+        <label for="manage_blog_content">本文</label>
         <%= f.text_area :content %>
         <%= f.submit %>
       <% end %>
