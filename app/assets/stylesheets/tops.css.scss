@@ -280,6 +280,108 @@ nav{
 	}
 }
 
+/************
+* TOP
+************/
+.main{
+	text-align: center;
+	
+	h1{
+		margin-top: 20px;
+		font-weight: bold;
+	}
+	
+	a{
+		display: block;
+		font-size: 120%;
+		padding: 10px 0;
+	}
+}
+
+/************
+* login-contents
+************/
+
+.sign-up-contents{
+	width: 300px;
+	height: auto;
+	margin: 50px auto;
+	text-align: center;
+	
+	label{
+		display: block;
+		margin-top: 20px;
+		font-size: 120%;
+	}
+	
+	input{
+		padding: 10px;
+		font-size: 120%;
+	}
+	
+	input[type="radio"]{
+		display: inline-block;
+		margin: 10px;
+	}
+	
+	/*
+span{
+		color: #fff;
+		font-size: 450%;
+	}
+	
+	input{
+		display: block;
+		border: none;
+		color: #cb3c37;
+		background-color: #fff;
+		@include box-sizing(border-box);
+	}
+	
+	input[type="text"], input[type="password"]{
+		width: 100%;
+		font-size: 20px;
+		margin: 20px 0;
+		padding: 10px;
+		@include placeholder-color(#cb3c37);
+		
+		&:focus{
+			outline: 0;
+		}
+	}
+	
+	.button{
+		@extend %clearfix;
+	}
+	
+	input[type="submit"]{
+		width: 50%;
+		color: #fff;
+		font-size: 20px;
+		padding: 20px;
+		margin-top: 40px;
+		border-top: solid 2px #fff;
+		background-color: #ce5044;
+		float: left;
+		-moz-transition-duration: .5s;
+		-webkit-transition-duration: .5s;
+		-o-transition-duration: .5s;
+		-ms-transition-duration: .5s;
+		//iOS対策
+		-webkit-appearance: none;
+		@include border-radius(0);
+		
+		&:hover{
+			background-color: #ad332f;
+		}
+	}
+	
+	input[type="button"]{
+		@extend input[type="submit"];
+		border-left: solid 2px #fff; 
+	}
+*/
+}
 
 
 

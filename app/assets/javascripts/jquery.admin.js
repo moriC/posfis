@@ -65,8 +65,8 @@ $(function(){
 * 友達のなる削除
 *****************/
 
-$(".newFriends p").click(function(){
-	$(this).parent().parent().html("友達になりました").fadeOut("slow");
+$(".newFriends p > a").click(function(){
+	$(this).parent().parent().parent().html("友達になりました").fadeOut("slow");
 })
 
 
