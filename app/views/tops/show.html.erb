@@ -53,7 +53,7 @@
 			<% @blogs.each do |blog| %>
 				<div class="item w1 c1">
 					<div class="imgBox">
-						<img src="img/redTomate.png" alt="" width="100%" />
+						<%= image_tag blog.picture.url(:medium) %>
 					</div>
 					<div class="inner">
 						<h2><%= blog.title %></h2>
@@ -61,6 +61,20 @@
 						<p><%= blog.content %></p>
 					</div>
 					<%= link_to '続きを読む', manage_blog_path, :class => "more" %> 
+				</div>
+			<% end %> 
+
+			<% @products.each do |product| %>
+				<div class="item w1 c1">
+					<div class="imgBox">
+						<%= image_tag product.picture.url(:medium) %>
+					</div>
+					<div class="inner">
+						<h2><%= product.product_name %></h2>
+						<p><%= format_date product.created_at %></p>
+						<p><%= product.contents %></p>
+					</div>
+					<%= link_to '購入する', manage_product_path, :class => "more" %> 
 				</div>
 			<% end %> 
 			
