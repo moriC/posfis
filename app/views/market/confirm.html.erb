@@ -1,3 +1,16 @@
 <h3><%= @product.product_name %>購入確認ページ</h3>
+	<p>価格: <%= @product.price %>円</p>
+	<p>送料: <%= @product.delivery_fee %>円</p>
+	<p>個数: <%= @confirm.request_count %>個</p>
 
+	<label>お届け先名</label>
+  <%= @confirm.name %><br>
+  <label>お届け先郵便番号</label>
+  <%= @confirm.address_number %><br>
+  <label>お届け先</label>
+  <%= @confirm.address %><br>
+  <label>ご連絡先(email)</label>
+  <%= @confirm.user_email %><br>
+  <label>ご連絡先(電話番号)</label>
+  <%= @confirm.user_tel %><br>
  <%= link_to image_tag('https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'), :action => 'checkout' %>
