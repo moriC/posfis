@@ -81,6 +81,15 @@ Posfis::Application.routes.draw do
   #     resources :products
   #   end
   resources :tops
+  resources :market do
+    member do
+      get 'purchase'
+      post 'confirm'
+      get 'checkout'
+      get 'success'
+      post 'complete'
+    end
+  end
 
   # 管理関係ルーティング
 

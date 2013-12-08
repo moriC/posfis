@@ -9,7 +9,7 @@ class TopsController < ActionController::Base
 
 	def show
 		@blogs = Manage::Blog.where(:user_id => params[:id])
-		friends = Manage::Friend.select("to_user_id").where(:from_user_id => current_user.id)
+		friends = Manage::Friend.select("to_user_id").where(:from_user_id => params[:id])
     @friends = Manage::Friend.where(:to_user_id => friends)
     @products = Manage::Product.where(:user_id => params[:id])
 	end
