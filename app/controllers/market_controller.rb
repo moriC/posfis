@@ -1,4 +1,5 @@
 class MarketController < ApplicationController
+	layout 'market'
 	include ActiveMerchant::Billing
 	before_action :set_params, only: [:purchase, :confirm]
 
