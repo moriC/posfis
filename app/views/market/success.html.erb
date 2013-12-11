@@ -1,16 +1,20 @@
-<h1>Please Confirm Your Payment Details</h1>
+<div class="market w2">
+<div class="confirm">
+<h1>お支払い先情報の確認</h1>
 
 <table>
-  <tr><td>Name</td><td><%= @address['name'] %></td></tr>
-  <tr><td>Company</td><td><%= @address['company'] %></td></tr>
-  <tr><td>Address 1</td><td><%= @address['address1'] %></td></tr>
-  <tr><td>Address 2</td><td><%= @address['address2'] %></td></tr>
-  <tr><td>City</td><td><%= @address['city'] %></td></tr>
-  <tr><td>State</td><td><%= @address['state'] %></td></tr>
-  <tr><td>Country</td><td><%= @address['country'] %></td></tr>
+  <tr><td>支払先名 : </td><td><%= @address['name'] %></td></tr>
+  <tr><td>支払先会社名 : </td><td><%= @address['company'] %></td></tr>
+  <tr><td>住所 1 : </td><td><%= @address['address1'] %></td></tr>
+  <tr><td>住所 2 : </td><td><%= @address['address2'] %></td></tr>
+  <tr><td>市町村 : </td><td><%= @address['city'] %></td></tr>
+  <tr><td>県 : </td><td><%= @address['state'] %></td></tr>
+  <tr><td>国 : </td><td><%= @address['country'] %></td></tr>
   <tr><td>Zip</td><td><%= @address['zip'] %></td></tr>
 </table>
 
 <%= form_tag :action => 'complete', :token => params[:token], :payer_id => params[:PayerID] do %>
   <%= submit_tag 'Complete Payment' %>
 <% end %>
+</div>
+</div>
