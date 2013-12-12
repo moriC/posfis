@@ -1,16 +1,37 @@
-<h3><%= @product.product_name %>購入確認ページ</h3>
-	<p>価格: <%= @product.price %>円</p>
-	<p>送料: <%= @product.delivery_fee %>円</p>
-	<p>個数: <%= @confirm.request_count %>個</p>
+<div class="market w2">
+<div class="confirm">
+	<h3><%= @product.product_name %>購入確認ページ</h3>
+		<p>価格: <span class="price"><%= @product.price %></span>円</p>
+		<p>送料: <span class="fee"><%= @product.delivery_fee %></span>円</p>
+		<p>個数: <span class="count"><%= @confirm.request_count %></span>個</p>
+		
+		<p class="sum"></p>
+	
+		<label>お届け先名 :</label>
+	  <%= @confirm.name %><br>
+	  <label>お届け先郵便番号 :</label>
+	  <%= @confirm.address_number %><br>
+	  <label>お届け先 :</label>
+	  <%= @confirm.address %><br>
+	  <label>ご連絡先(email) :</label>
+	  <%= @confirm.user_email %><br>
+	  <label>ご連絡先(電話番号) :</label>
+	  <%= @confirm.user_tel %><br>
+	  <br>
+	  <label>お支払い :</label><br>
+	 <%= link_to image_tag('https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'), :action => 'checkout' %>
+	</div>
+</div>
 
-	<label>お届け先名</label>
-  <%= @confirm.name %><br>
-  <label>お届け先郵便番号</label>
-  <%= @confirm.address_number %><br>
-  <label>お届け先</label>
-  <%= @confirm.address %><br>
-  <label>ご連絡先(email)</label>
-  <%= @confirm.user_email %><br>
-  <label>ご連絡先(電話番号)</label>
-  <%= @confirm.user_tel %><br>
- <%= link_to image_tag('https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif'), :action => 'checkout' %>
+<script>
+	$(function(){
+		var $price = parseInt( $(".price").html(), 10 );
+		var $fee = parseInt( $(".fee").html(), 10 );
+		var $count = parseInt( $(".count").html(), 10 );
+		
+		var $sum = $price*$count+$fee;
+		
+		
+		$(".sum").html("合計 : "+$sum+"円(税込み)");
+	})
+</script>

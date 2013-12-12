@@ -1,3 +1,113 @@
 // Place all the styles related to the market controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "UTF-8";
+@import "compass";
+@import "compass/reset";
+
+$menuColor: #ffffff;
+$mainColor: #4ed39c;
+$baceColor: #f8f5ec;
+$fontColor: #858585;
+$accentColor: #ef5348;
+$barColor: #4ed39c;
+
+%clearfix {
+	*zoom: 1;
+}
+%clearfix:after {
+	content: '';
+	display: block;
+	clear : both;
+	height: 0;
+}
+@media print {  
+	%clearfix:after {    
+		height: 1px;    
+		margin-bottom: -1px;
+		visibility: hidden;	
+	}
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li, input, textarea,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	@include box-sizing(border-box);
+}
+
+body{
+	font-size: 13px;
+	font-family: sans-serif;
+	line-height: 1.5;
+	background-color: $baceColor;
+}
+
+h1{
+	font-size: 150%;
+}
+h2{
+	font-size: 140%;
+	font-weight: bold;
+}
+h3{
+	font-size: 150%;
+	font-weight: bold;
+}
+h4{
+	font-size: 110%;
+}
+
+a{
+	color: $fontColor;
+	text-decoration: none;
+}
+
+img{
+	vertical-align: text-bottom;
+}
+
+.market {
+	margin: 30px auto;
+	background-color: #fff;
+	line-height: 2;
+	font-size: 17px;
+	color: $fontColor;
+	background-color: #fff;
+	@include border-radius(3px);
+	box-shadow: 0 1px 2px #d9d8d9;
+	.confirm{
+		padding: 20px;
+		
+		label{
+			color: lighten($fontColor, 10%);
+		}
+		
+		.sum{
+			font-size: 130%;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		
+		td{
+			border: solid 1px $fontColor;
+			padding: 5px;
+		}
+		
+		img{
+			width: 50%;
+			height: auto;
+			vertical-align: text-bottom;
+		}
+	}
+}

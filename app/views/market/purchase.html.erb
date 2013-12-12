@@ -1,19 +1,24 @@
-<h3><%= @product.product_name %>購入ページ</h3>
-<%= form_for(@market, :url => {:action => 'confirm'}) do |f| %>
-	<p>価格: <%= @product.price %>円</p>
-	<p>送料: <%= @product.delivery_fee %>円</p>
-	<p>個数: <%= f.text_field :request_count %>個</p>
-
-	<label>お届け先名</label>
-  <%= f.text_field :name %><br>
-  <label>お届け先郵便番号</label>
-  <%= f.text_field :address_number %><br>
-  <label>お届け先</label>
-  <%= f.text_field :address %><br>
-  <label>ご連絡先(email)</label>
-  <%= f.text_field :user_email %><br>
-  <label>ご連絡先(電話番号)</label>
-  <%= f.text_field :user_tel %><br>
-
-  <%= f.submit %>
-<% end %>
+<div class="market w2">
+	<div class="quick">
+		<h3><%= @product.product_name %>購入ページ</h3>
+		<%= form_for(@market, :url => {:action => 'confirm'}) do |f| %>
+		  <p>価格: <%= @product.price %>円</p>
+		  <p>送料: <%= @product.delivery_fee %>円</p>
+		  <br>
+		  <p>個数  <%= f.text_field :request_count %></p>
+		
+		  <label>お届け先名</label>
+		  <%= f.text_field :name %>
+		  <label>お届け先郵便番号</label>
+		  <%= f.text_field :address_number %>
+		  <label>お届け先</label>
+		  <%= f.text_field :address %>
+		  <label>ご連絡先(email)</label>
+		  <%= f.text_field :user_email %>
+		  <label>ご連絡先(電話番号)</label>
+		  <%= f.text_field :user_tel %>
+		
+		  <%= f.submit %>
+		<% end %>
+	</div>
+</div>
