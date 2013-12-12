@@ -28,7 +28,7 @@ class Manage::ProductsController < ManageController
     @manage_product.user_id = current_user.id
 
     if @manage_product.save
-      redirect_to manage_product_path
+      redirect_to manage_products_path
     else
       redirect_to new_manage_product_path
     end

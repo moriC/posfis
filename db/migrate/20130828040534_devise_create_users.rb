@@ -15,6 +15,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :user_name
       t.string :user_address_number
       t.string :user_address
+      t.string :paypal_login
+      t.string :paypal_password
+      t.string :paypal_signature
       t.attachment :avatar
 
       ## Rememberable

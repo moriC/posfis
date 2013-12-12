@@ -1,7 +1,7 @@
 class MarketController < ApplicationController
 	layout 'market'
 	include ActiveMerchant::Billing
-	before_action :set_params, only: [:purchase, :confirm]
+	before_action :set_params, only: [:purchase, :confirm, :checkout]
 
 	def purchase
 		@market = Order.new
@@ -12,19 +12,22 @@ class MarketController < ApplicationController
 	end
 
 	def checkout
-		setup_response = EXPRESS_GATEWAY.setup_purchase(5000,
+		@confirm = Order.new(order_params)
+		price = @confirm.price.to_i * @confirm.request_count.to_i
+		binding.pry
+		setup_response = express_gateway.setup_purchase(price,
 			:currency_code => :JPY,
 	    :ip                => request.remote_ip,
 	    :return_url        => url_for(:action => 'success', :only_path => false),
-	    :cancel_return_url => url_for(:action => 'index', :only_path => false)
+	    :cancel_return_url => url_for(:action => 'purchase', :only_path => false)
 	  )
-  redirect_to EXPRESS_GATEWAY.redirect_url_for(setup_response.token)
+  redirect_to express_gateway.redirect_url_for(setup_response.token)
 	end
 
 	def success
-		redirect_to :action => 'index' unless params[:token]
+		redirect_to :action => 'purchase' unless params[:token]
   
-	  details_response = EXPRESS_GATEWAY.details_for(params[:token])
+	  details_response = express_gateway.details_for(params[:token])
 	  
 	  if !details_response.success?
 	    @message = details_response.message
@@ -36,7 +39,7 @@ class MarketController < ApplicationController
 	end
 
 	def complete
-	  purchase = EXPRESS_GATEWAY.purchase(5000,
+	  purchase = express_gateway.purchase(5000,
 	  	:currency_code => :JPY,
 	    :ip       => request.remote_ip,
 	    :payer_id => params[:payer_id],
@@ -58,5 +61,15 @@ class MarketController < ApplicationController
 
     def order_params
     	params.require(:order).permit(:request_count, :price, :name, :address_number, :address, :user_email, :user_tel)
+    end
+
+    def express_gateway
+    	@express_product = Manage::Product.find(params[:id])
+    	@express_user = User.find(@express_product.user_id)
+    	@gateway ||= PaypalExpressGateway.new(
+		    :login => @express_user.paypal_login,
+		    :password => @express_user.paypal_password,
+		    :signature => @express_user.paypal_signature
+		  )
     end
 end

@@ -85,7 +85,7 @@ Posfis::Application.routes.draw do
     member do
       get 'purchase'
       post 'confirm'
-      get 'checkout'
+      post 'checkout'
       get 'success'
       post 'complete'
     end
