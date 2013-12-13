@@ -6,5 +6,6 @@ class Manage::Product < ActiveRecord::Base
       :medium => ["100x100#", :png],
       :large => ["300x300>", :png]
     },
+    :default_url => "/assets/noimg.png"
   }
 end
