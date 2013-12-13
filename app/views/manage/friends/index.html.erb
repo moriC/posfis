@@ -5,7 +5,7 @@
 			<table>
 				<% @friends_blogs.each do |friends_blog| %>
 				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+					<td class="face"><%= image_tag @friends_blog.picture.url(:thumb) %></td>
 					<td class="friendInfo">
 						<p class="date"><%= format_date friends_blog.created_at %></p>
 						<h3 class="title"><%= friends_blog.title %></h3>
@@ -33,7 +33,7 @@
 			<tbody>
 				<% @manage_friends.each do |manage_friend| %>
 				<tr>
-					<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+					<td class="face"><%= image_tag manage_friend.to_user.avatar.url(:thumb) %></td>
 					<td class="friendInfo">
 						<h3><%= link_to manage_friend.to_user.user_name, "/tops/#{manage_friend.to_user.id}" %></h3>
 						<p class="belong">農家</p>
@@ -69,7 +69,7 @@
 				<a href="">
 					<% @users.each do |user| %>
 						<tr class = "friend_user" id = <%= "user#{user.id}"%>>
-							<td class="face"><img src="img/moriC.jpg" alt="" /></td>
+							<td class="face"><%= image_tag user.avatar.url(:thumb) %></td>
 							<td class="friendInfo">
 								<h3><%= link_to user.user_name, "/tops/#{user.id}" %></h3>
 								<p class="belong"><%= format_user_type user.user_type %></p>
