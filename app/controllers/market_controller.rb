@@ -14,6 +14,7 @@ class MarketController < ApplicationController
 	def checkout
 		@confirm = Order.new(order_params)
 		price = @confirm.price.to_i * @confirm.request_count.to_i
+		$order = @confirm
 		setup_response = express_gateway.setup_purchase(price,
 			:currency_code => :JPY,
 	    :ip                => request.remote_ip,
@@ -50,6 +51,13 @@ class MarketController < ApplicationController
 	    render :action => 'error'
 	    return
 	  end
+	  if user_signed_in?
+	  	$order.buyer_user_id = current_user.id
+	  else
+	  	$order.buyer_user_id = 0
+	  end
+	  $order.condition = 0
+	  $order.save
 	end
 
 	private
@@ -59,7 +67,7 @@ class MarketController < ApplicationController
     end
 
     def order_params
-    	params.require(:order).permit(:request_count, :price, :name, :address_number, :address, :user_email, :user_tel)
+    	params.require(:order).permit(:business_user_id_integer, :product_id, :request_count, :price, :name, :address_number, :address, :user_email, :user_tel)
     end
 
     def express_gateway
