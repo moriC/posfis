@@ -14,7 +14,6 @@ class MarketController < ApplicationController
 	def checkout
 		@confirm = Order.new(order_params)
 		price = @confirm.price.to_i * @confirm.request_count.to_i
-		binding.pry
 		setup_response = express_gateway.setup_purchase(price,
 			:currency_code => :JPY,
 	    :ip                => request.remote_ip,
