@@ -7,6 +7,11 @@ class ManageController < ApplicationController
     @manage_blogs = Manage::Blog.where(:user_id => friends).order("created_at DESC").take(5)
 		@quick_blog = Manage::Blog.new
 		@blog_categories = Manage::BlogCategories.all
+		all_user_logs = Log.where(:for_user_id => 0).where_values.reduce(:and)
+		current_user_logs = Log.where(:for_user_id => current_user.id).where_values.reduce(:and)
+		@logs = Log.where(all_user_logs.or(current_user_logs)).limit(10)
+
+
 	end
 
 	def create_blog

@@ -29,3 +29,13 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+log
+for_user_id 0 = all user 
+
+log type
+* 0 システムメンテナンス
+* 1 システムアップデート
+* 2 ブログ掲載
+* 3 購入
+* 4 購入された

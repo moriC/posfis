@@ -3,11 +3,9 @@
 		<h2 class="bar">お知らせ</h2>
 		<div class="inner">
 			<ul>
-				<li><span class="date">2013.07.13 - </span>メッセージが届きました</li>
-				<li><span class="date">2013.07.01 - </span>アップデートが届きました</li>
-				<li><span class="date">2013.06.15 - </span>メンテナンスのお知らせ</li>
-				<li><span class="date">2013.06.11 - </span>メッセージが届きました</li>
-				<li><span class="date">2013.06.01 - </span>アップデートが届きました</li>
+				<% @logs.each do |log| %>
+					<li><span class="date"><%= format_date log.created_at %> - </span><%= log_message log.log_type %></li>
+				<% end %>
 			</ul>
 		</div>
 	</div>

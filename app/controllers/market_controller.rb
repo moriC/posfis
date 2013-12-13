@@ -58,6 +58,16 @@ class MarketController < ApplicationController
 	  end
 	  $order.condition = 0
 	  $order.save
+	  @log = Log.new
+	  @log.for_user_id = $order.buyer_user_id
+	  @log.log_type = 3
+	  @log.save
+
+	  @log = Log.new
+	  @log.for_user_id = $order.business_user_id_integer
+	  @log.log_type = 4
+	  @log.save
+
 	end
 
 	private
