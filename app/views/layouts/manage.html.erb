@@ -56,6 +56,13 @@
 				    	<span class="icon icon-tag"></span><span class="tag">商品管理</span>
 						<% end %>
 					</li>
+					<% if current_user.user_type >= 2 %>
+					<li class="menu">
+						<%= link_to history_manage_orders_path do %>
+				    	<span class="icon icon-bag"></span><span class="tag">販売管理</span>
+						<% end %>
+					</li>
+					<% end %>
 					<li class="menu">
 						<%= link_to history_manage_orders_path do %>
 				    	<span class="icon icon-bag"></span><span class="tag">買物履歴</span>
@@ -71,7 +78,7 @@
 				    	<span class="icon icon-user"></span><span class="tag">ユーザ設定</span>
 						<% end %>
 					</li>
-					<% if current_user.user_type == 4%>
+					<% if current_user.user_type == 4 %>
 						<li class="menu">
 							<%= link_to admin_users_path do %>
 					    	<span class="icon icon-users"></span><span class="tag">ユーザ管理</span>
