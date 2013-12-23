@@ -4,7 +4,7 @@ module ManageHelper
 	end
 
 	def format_user_type(user_type)
-		if user_type == 0
+		if user_type == 4
 			p "[システム管理者]"
 		elsif user_type == 1
 			p "[消費者]"
