@@ -2,7 +2,7 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
       t.integer :buyer_user_id
-      t.string :business_user_id_integer
+      t.integer :business_user_id
       t.integer :product_id
       t.string :express_token
       t.string :express_payer_id

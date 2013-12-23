@@ -64,7 +64,7 @@ class MarketController < ApplicationController
 	  @log.save
 
 	  @log = Log.new
-	  @log.for_user_id = $order.business_user_id_integer
+	  @log.for_user_id = $order.business_user_id
 	  @log.log_type = 4
 	  @log.save
 
@@ -77,7 +77,7 @@ class MarketController < ApplicationController
     end
 
     def order_params
-    	params.require(:order).permit(:business_user_id_integer, :product_id, :request_count, :price, :name, :address_number, :address, :user_email, :user_tel)
+    	params.require(:order).permit(:business_user_id, :product_id, :request_count, :price, :name, :address_number, :address, :user_email, :user_tel)
     end
 
     def express_gateway

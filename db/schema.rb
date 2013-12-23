@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20131213150336) do
 
   create_table "orders", force: true do |t|
     t.integer  "buyer_user_id"
-    t.string   "business_user_id_integer"
+    t.integer  "business_user_id"
     t.integer  "product_id"
     t.string   "express_token"
     t.string   "express_payer_id"
