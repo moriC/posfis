@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :buyer_user_id
       t.integer :business_user_id
       t.integer :product_id
-      t.integer :product_value_id
+      t.integer :product_value
       t.string :express_token
       t.string :express_payer_id
       t.string :request_count

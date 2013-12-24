@@ -8,7 +8,7 @@
 					<h3>
 						<%= link_to order.product.product_name, "/manage/products/#{order.product_id}" %>
 						<% if (order.product_value) %>
-							<%= output_value order.product_value.value %>
+							<%= output_value order.product_value.to_i %>
 						<% end %>
 					</h3>
 				</div>
@@ -26,7 +26,7 @@
 							<% end %>
 							<li><a href="../farmerBlog/goodsInfo.html">詳細表示</a></li>
 							<% if !(order.product_value) %>
-								<li><%= link_to 'この商品を評価する', new_manage_product_value_path(:product_id => order.product.id, :order_id => order.id) %></li>
+								<li><%= link_to 'この商品を評価する', edit_manage_product_value_path(order, :product_id => order.product.id) %></li>
 							<% else %>
 								<li>評価済み</li>
 							<% end %>

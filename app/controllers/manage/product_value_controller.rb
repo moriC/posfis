@@ -1,24 +1,22 @@
 class Manage::ProductValueController < ManageController
 	def new
 		@product = Manage::Product.find(params[:product_id])
-		@order = Order.find(params[:order_id])
-		@value = ProductValue.new
 	end
 
-	def create
-		@value = ProductValue.new(value_params)
-		@value.save
-		redirect_to history_manage_orders_path
+	def edit
+		@product = Manage::Product.find(params[:product_id])
+		@order = Order.find(params[:id])
 	end
 
 	def update
-		@value = ProductValue.new(value_params)
-		@value.save
+		@order = Order.find(params[:order_id])
+		@order.product_value = params[:value].to_i
+		@order.update(value_params)
 		redirect_to history_manage_orders_path
 	end
 
 	private
     def value_params
-      params.require(:value).permit(:user_id, :product_id, :value, :order_id)
+      params.permit(:product_value)
     end
 end

@@ -1,15 +1,13 @@
-<%= form_tag('/manage/product_value/create', :method => :put) do %>
+<%= form_tag('/manage/product_value/update', :method => :put) do %>
   <label>商品名</label>
   <%= @product.product_name %>
-  <%= hidden_field_tag 'value[product_id]', @product.id %>
   <br>
   <label>購入者</label>
   <%= current_user.user_name %>
-  <%= hidden_field_tag 'value[user_id]', current_user.id %>
   <br>
   <label>評価</label>
-  <%= select_tag 'value[value]', options_for_select({"☆" => 1, "☆☆" => 2, "☆☆☆" => 3, "☆☆☆☆" => 4, "☆☆☆☆☆" => 5}) %>
+  <%= select_tag 'value', options_for_select({"☆" => 1, "☆☆" => 2, "☆☆☆" => 3, "☆☆☆☆" => 4, "☆☆☆☆☆" => 5}) %>
   <br>
-  <%= hidden_field_tag 'value[order_id]', @order.id %>
+  <%= hidden_field_tag 'order_id', @order.id %>
   <%= submit_tag "登録"  %>
 <% end %>

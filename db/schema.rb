@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131224135640) do
   create_table "logs", force: true do |t|
     t.integer  "for_user_id"
     t.integer  "log_type"
+    t.text     "log_message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,6 +79,7 @@ ActiveRecord::Schema.define(version: 20131224135640) do
     t.integer  "buyer_user_id"
     t.integer  "business_user_id"
     t.integer  "product_id"
+    t.string   "product_value",    limit: 11
     t.string   "express_token"
     t.string   "express_payer_id"
     t.string   "request_count"
@@ -98,15 +100,6 @@ ActiveRecord::Schema.define(version: 20131224135640) do
     t.integer  "condition"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "product_values", force: true do |t|
-    t.integer  "product_id"
-    t.integer  "user_id"
-    t.integer  "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "order_id"
   end
 
   create_table "users", force: true do |t|
