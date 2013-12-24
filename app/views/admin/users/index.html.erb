@@ -2,37 +2,39 @@
 	<div class="artList">
 		<h2 class="bar">ユーザ一覧</h2>
 		<div class="inner">
-			<table>
-				<thead>
-					<tr>
-						<td rowspan="2">ID</td>
-						<td rowspan="2">ユーザ名</td>
-						<td colspan="4" align="center">ユーザ区分</td>
-						<td rowspan="2" colspan="3">操作</td>
-					</tr>
-					<tr>
-						<td>消費者</td>
-						<td>農家</td>
-						<td>業者</td>
-						<td>システム管理者</td>
-					</tr>
-				</thead>
-				<tbody>
-					<% @users.each do |user| %>
+			<div class="table-inner">
+				<table>
+					<thead>
 						<tr>
-							<td><%= user.id %></td>
-							<td><%= user.user_name %></td>
-							<td><%= output_user_type1(user.user_type) %><td>
-							<td><%= output_user_type2(user.user_type) %><td>
-							<td><%= output_user_type3(user.user_type) %><td>
-							<td><%= output_user_type4(user.user_type) %><td>
-							<td><%= link_to '詳細', admin_user_path(user) %></td>
-							<td>編集</td>
-							<td>削除</td>
+							<td rowspan="2">ID</td>
+							<td rowspan="2">ユーザ名</td>
+							<td colspan="4" align="center">ユーザ区分</td>
+							<td rowspan="2" colspan="3">操作</td>
 						</tr>
-					<% end %>
-				</tbody>
-			</table>		
+						<tr>
+							<td>消費者</td>
+							<td>農家</td>
+							<td>業者</td>
+							<td>システム管理者</td>
+						</tr>
+					</thead>
+					<tbody>
+						<% @users.each do |user| %>
+							<tr>
+								<td><%= user.id %></td>
+								<td><%= user.user_name %></td>
+								<td><%= output_user_type1(user.user_type) %><td>
+								<td><%= output_user_type2(user.user_type) %><td>
+								<td><%= output_user_type3(user.user_type) %><td>
+								<td><%= output_user_type4(user.user_type) %><td>
+								<td><%= link_to '詳細', admin_user_path(user) %></td>
+								<td>編集</td>
+								<td>削除</td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>		
 		</div>
 	</div>
 </div>
