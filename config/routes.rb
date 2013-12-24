@@ -20,6 +20,7 @@ Posfis::Application.routes.draw do
     end
     resources :settings
     resources :user_settings
+    resources :product_value
   end
 
   namespace :admin do

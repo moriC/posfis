@@ -22,6 +22,7 @@
 							<li>品切れ中</li>
 							<% end %>
 							<li><a href="../farmerBlog/goodsInfo.html">詳細表示</a></li>
+							<li><%= link_to 'この商品を評価する', new_manage_product_value_path,	:para =>order.product.id %></li>
 						</ul>
 					</div>
 				</div>
