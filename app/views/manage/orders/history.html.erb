@@ -7,6 +7,9 @@
 				<div class="artTitle">
 					<h3>
 						<%= link_to order.product.product_name, "/manage/products/#{order.product_id}" %>
+						<% if (order.product_value) %>
+							<%= output_value order.product_value.value %>
+						<% end %>
 					</h3>
 				</div>
 				<div class="productImg">
@@ -22,7 +25,11 @@
 							<li>品切れ中</li>
 							<% end %>
 							<li><a href="../farmerBlog/goodsInfo.html">詳細表示</a></li>
-							<li><%= link_to 'この商品を評価する', new_manage_product_value_path,	:para =>order.product.id %></li>
+							<% if !(order.product_value) %>
+								<li><%= link_to 'この商品を評価する', new_manage_product_value_path(:product_id => order.product.id, :order_id => order.id) %></li>
+							<% else %>
+								<li>評価済み</li>
+							<% end %>
 						</ul>
 					</div>
 				</div>
