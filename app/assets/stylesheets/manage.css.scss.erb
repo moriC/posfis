@@ -290,6 +290,11 @@ header{
 }
 
 .quick{
+
+	h2{
+		font-weight: bold;
+	}
+	
 	form{
 		padding: 10px;
 		
@@ -319,6 +324,10 @@ header{
 		}
 		
 		input[type="tel"]{
+			@extend input[type="text"];
+		}
+		
+		input[type="email"]{
 			@extend input[type="text"];
 		}
 

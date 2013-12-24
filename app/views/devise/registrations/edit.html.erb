@@ -24,9 +24,21 @@
         <div><%= f.label :password, '新しいパスワード' %> <i>(変更しない場合は空白にしてください)</i><br />
         <%= f.password_field :password, :autocomplete => "off" %></div>
 
-        <div><%= f.label :password_confirmation, '新しいパスワードの確認' %><br />
+        <div><%= f.label :password_confirmation, '新しいパスワードの確認' %><i>(変更する場合は再度入力してください)</i><br />
         <%= f.password_field :password_confirmation %></div>
 		
+		
+		<br>
+        <h2>Paypalの設定</h2>
+        
+        <div><label for="user_paypal_id">Paypalのユーザ名</label><br />
+        <input type="text" name="" id="user_paypal_id"></div>
+        
+        <div><label for="user_paypal_API">PaypalのAPI</label>(APIコードをここに貼り付けてください)<br />
+        <textarea name="" id="user_paypal_API" cols="30" rows="10"></textarea></div>
+        
+        <div><label for="user_paypal_pw">Paypalのパスワード</label><br />
+        <input type="password" name="" id="user_paypal_pw"></div>
 		
 		<br />
 		<br />
