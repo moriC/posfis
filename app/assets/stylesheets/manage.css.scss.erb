@@ -572,6 +572,14 @@ header{
 	.artMenu{
 		float: left;
 	}
+	
+	.artBtn{
+		float: left;
+		width: 100px;
+		height: 60px;
+		color: #fff;
+		background-color: $accentColor;
+	}
 
 	li{
 		display: inline-block;
@@ -657,6 +665,74 @@ header{
 		clear: both;
 	}
 	
+}
+
+
+/******************
+* 販売履歴
+******************/
+.histrry-type{
+	@extend .inner;
+	padding: 10px;
+	
+	table{
+		td{
+			display: inline-block;
+		}
+	}
+}
+	
+$before: #fc7c80;
+$now: #ffff80;
+$end: #ffffff;
+
+.send-before{
+	width: 20px;
+	height: 20px;
+	margin: 0 5px 0 20px;
+	border: solid 1px #555;
+	background-color: $before;
+}
+
+.send-now{
+	@extend .send-before;
+	background-color: $now;
+}
+
+.send-end{
+	@extend .send-before;
+	background-color: $end;
+}
+
+.send-before-list{
+	padding: 10px;
+	border: solid 5px $before;
+}
+
+.send-now-list{
+	padding: 10px;
+	border: solid 5px $now;
+}
+
+.send-end-list{
+	padding: 10px;
+	border: solid 5px $end;
+}
+
+
+
+
+/******************
+* 買い物履歴
+******************/
+.edit-inner{
+	@extend .inner;
+	padding: 10px;
+	
+	h3{
+		font-weight: bold;
+		font-size: 150%;
+	}
 }
 
 
