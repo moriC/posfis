@@ -17,3 +17,6 @@
 
 # Pictures
 /public/system/*
+
+# sass cache
+.sass-cache/*
