@@ -138,12 +138,27 @@ header{
 	background-color: #272e34;
 	color: #fff;
 	@extend %clearfix;
+	
+	/********************
+	* 文字サイズ
+	********************/
 
 	.hdrContents{
 		width: 100%;
 		max-width: 1010px;
 		height: auto;
 		margin: 0 auto;
+		
+		span{
+			cursor: pointer;
+		}
+	}
+	
+	.plus, .minus{
+		font-size: 120%;
+		&:hover{
+			color: #fff;
+		}
 	}
 	
 	.logo{
@@ -717,6 +732,28 @@ $end: #ffffff;
 .send-end-list{
 	padding: 10px;
 	border: solid 5px $end;
+	
+	.next-btn{
+		display: none;
+	}
+}
+
+.next-btn{
+	float: left;
+	display: block;
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	margin-left: 20px;
+	line-height: 50px;
+	text-align: center;
+	background-color: $accentColor;
+	font-size: 130%;
+	cursor: pointer;
+	
+	&:hover{
+		background-color: lighten($accentColor, 10%);
+	}
 }
 
 

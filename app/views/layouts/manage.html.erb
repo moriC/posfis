@@ -18,6 +18,8 @@
 				<h1>FIS</h1>
 			</div>
 			<div class="hdrTools">
+				<span class="plus">+</span>
+				<span class="minus">-</span>
 				<%= format_user_type current_user.user_type %><%= current_user.user_name %>
 				<span class="icon-comment"></span>
 				<%= link_to destroy_user_session_path, :method => "delete" do %>
