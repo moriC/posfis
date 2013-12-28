@@ -18,34 +18,26 @@ $(function(){
 		});
 	});
 	
-	
-
-/******************
-* minimalect
-*セレクトの形式変更
-******************/
-
-	$("select").minimalect();
-
-
-
-/******************
-* ★を押した時の処理
-******************/
-
-	$(".star").toggle(function(){
-		$(this).css("color","#FF0");
-		$(this).find(".icon-star-empty").removeClass("icon-star-empty").addClass("icon-star");
-	},function(){
-		$(this).css("color","#858585");
-		$(this).find(".icon-star").removeClass("icon-star").addClass("icon-star-empty");
-	});
-
-
 
 /******************
 * 公開非公開の処理
 ******************/
+
+	$(".plus").click(function(){
+		$("body").css("font-size","120%");
+		$container.masonry("reload");
+	})
+	
+	$(".minus").click(function(){
+		$("body").css("font-size","13px");
+		$container.masonry("reload");
+	})
+
+ 
+
+/******************
+* 公開非公開の処理
+******************
 	
 	$(".status").toggle(function(){
 		$(this).html("非公開");

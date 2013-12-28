@@ -138,12 +138,27 @@ header{
 	background-color: #272e34;
 	color: #fff;
 	@extend %clearfix;
+	
+	/********************
+	* 文字サイズ
+	********************/
 
 	.hdrContents{
 		width: 100%;
 		max-width: 1010px;
 		height: auto;
 		margin: 0 auto;
+		
+		span{
+			cursor: pointer;
+		}
+	}
+	
+	.plus, .minus{
+		font-size: 120%;
+		&:hover{
+			color: #fff;
+		}
 	}
 	
 	.logo{
@@ -572,6 +587,14 @@ header{
 	.artMenu{
 		float: left;
 	}
+	
+	.artBtn{
+		float: left;
+		width: 100px;
+		height: 60px;
+		color: #fff;
+		background-color: $accentColor;
+	}
 
 	li{
 		display: inline-block;
@@ -657,6 +680,96 @@ header{
 		clear: both;
 	}
 	
+}
+
+
+/******************
+* 販売履歴
+******************/
+.histrry-type{
+	@extend .inner;
+	padding: 10px;
+	
+	table{
+		td{
+			display: inline-block;
+		}
+	}
+}
+	
+$before: #fc7c80;
+$now: #ffff80;
+$end: #ffffff;
+
+.send-before{
+	width: 20px;
+	height: 20px;
+	margin: 0 5px 0 20px;
+	border: solid 1px #555;
+	background-color: $before;
+}
+
+.send-now{
+	@extend .send-before;
+	background-color: $now;
+}
+
+.send-end{
+	@extend .send-before;
+	background-color: $end;
+}
+
+.send-before-list{
+	padding: 10px;
+	border: solid 5px $before;
+}
+
+.send-now-list{
+	padding: 10px;
+	border: solid 5px $now;
+}
+
+.send-end-list{
+	padding: 10px;
+	border: solid 5px $end;
+	
+	.next-btn{
+		display: none;
+	}
+}
+
+.next-btn{
+	float: left;
+	display: block;
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	margin-left: 20px;
+	line-height: 50px;
+	text-align: center;
+	background-color: $accentColor;
+	font-size: 130%;
+	cursor: pointer;
+	
+	&:hover{
+		background-color: lighten($accentColor, 10%);
+	}
+}
+
+
+
+
+/******************
+* 買い物履歴
+******************/
+.edit-inner{
+	@extend .inner;
+	padding: 10px;
+	
+	h3{
+		font-weight: bold;
+		font-size: 150%;
+	}
 }
 
 
