@@ -72,3 +72,6 @@ gem 'cocaine'
 
 gem 'paypal-express'
 gem 'activemerchant'
+
+gem 'public_activity'
+
