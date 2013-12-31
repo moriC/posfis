@@ -3,7 +3,7 @@
 	<td class="face"><%= image_tag activity.trackable.picture.url(:medium) %></td>
 	<td class="friendInfo">
 		<p class="date"><%= format_date activity.created_at %></p>
-		<h3 class="title">「<%= activity.trackable.title %>」を投稿しました。</h3>
+		<h3 class="title"><%= activity.trackable.title %>の記事を更新しました。</h3>
 		<p class="writer"><%= activity.owner.user_name %></p>
 	</td>
 	<td class="shareItem">

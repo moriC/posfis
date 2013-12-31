@@ -58,6 +58,7 @@ class Manage::BlogsController < ManageController
   # DELETE /manage/blogs/1
   # DELETE /manage/blogs/1.json
   def destroy
+    @manage_blog.picture.destroy
     @manage_blog.destroy
     respond_to do |format|
       format.html { redirect_to manage_blogs_url }

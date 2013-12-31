@@ -13,7 +13,7 @@ class ManageController < ApplicationController
 
 		user_activities = PublicActivity::Activity.where(:owner_id => current_user).where_values.reduce(:and)
 		user_friends_activities = PublicActivity::Activity.where(:owner_id => friends).where_values.reduce(:and)
-		@activities = PublicActivity::Activity.order("created_at DESC").where(:owner_type => "User").where(user_activities.or(user_friends_activities))
+		@activities = PublicActivity::Activity.order("created_at DESC").where(:owner_type => "User").where(user_activities.or(user_friends_activities)).limit(20)
 
 	end
 
