@@ -17,6 +17,9 @@ Posfis::Application.routes.draw do
       collection do
         get 'history'
       end
+      member do
+        get 'next_phase'
+      end
     end
     resources :settings
     resources :user_settings

@@ -1,0 +1,22 @@
+<% if activity.trackable %>
+	<% if activity.trackable.buyer_user_id = current_user.id || activity.trackable.business_user_id = current_user.id %>
+		<tr>
+			<td class="face"><%= image_tag activity.trackable.product.picture.url(:medium) %></td>
+			<td class="friendInfo">
+				<p class="date"><%= format_date activity.created_at %></p>
+				<% if p[:condition] == 2 %>
+					<h3 class="title">「<%= activity.trackable.product.product_name %>」を発送準備中にしました。</h3>
+				<% elsif p[:condition] == 3 %>
+					<h3 class="title">「<%= activity.trackable.product.product_name %>」を発送完了にしました。</h3>
+				<% end %> 	
+				<p class="writer"><%= activity.owner.user_name %></p>
+			</td>
+			<td class="shareItem">
+				<ul>
+				<li class="star"><span class="icon icon-star-empty"></span></li>
+				<li><span class="icon icon-export"></span></li>
+				</ul>
+			</td> 
+		</tr>
+	<% end %>
+<% end %>
