@@ -15,22 +15,9 @@
 		<h2 class="bar">フィード</h2>
 		<div class="inner">
 			<table>
-				<% @manage_blogs.each do |manage_blog| %>
-					<tr>
-						<td class="face"><%= image_tag manage_blog.picture.url(:medium) %></td>
-						<td class="friendInfo">
-							<p class="date"><%= format_date manage_blog.created_at %></p>
-							<h3 class="title"><%= manage_blog.title %></h3>
-							<p class="writer"><%= manage_blog.user.user_name %></p>
-						</td>
-						<td class="shareItem">
-							<ul>
-							<li class="star"><span class="icon icon-star-empty"></span></li>
-							<li><span class="icon icon-export"></span></li>
-							</ul>
-						</td> 
-					</tr>
-	      <% end %>
+				<% @activities.each do |activity| %>
+					<%= render_activity(activity) %>
+				<% end %>
 			</table>
 		</div>
 	</div>

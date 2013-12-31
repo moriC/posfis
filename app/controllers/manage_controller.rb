@@ -11,6 +11,9 @@ class ManageController < ApplicationController
 		current_user_logs = Log.where(:for_user_id => current_user.id).where_values.reduce(:and)
 		@logs = Log.where(all_user_logs.or(current_user_logs)).limit(10)
 
+		user_activities = PublicActivity::Activity.where(:owner_id => current_user).where_values.reduce(:and)
+		user_friends_activities = PublicActivity::Activity.where(:owner_id => friends).where_values.reduce(:and)
+		@activities = PublicActivity::Activity.order("created_at DESC").where(:owner_type => "User").where(user_activities.or(user_friends_activities))
 
 	end
 
