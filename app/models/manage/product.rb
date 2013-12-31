@@ -8,4 +8,7 @@ class Manage::Product < ActiveRecord::Base
     },
     :default_url => "/assets/noimg.png"
   }
+  include PublicActivity::Model
+
+  tracked :owner => proc {|controller, model| controller.current_user}
 end

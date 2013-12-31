@@ -47,6 +47,7 @@ class Manage::ProductsController < ManageController
   # DELETE /manage/products/1
   # DELETE /manage/products/1.json
   def destroy
+    @manage_blog.picture.destroy
     @manage_product.destroy
     respond_to do |format|
       format.html { redirect_to manage_products_url }

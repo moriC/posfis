@@ -1,0 +1,16 @@
+<% if activity.trackable %>
+<tr>
+	<td class="face"><%= image_tag activity.trackable.picture.url(:medium) %></td>
+	<td class="friendInfo">
+		<p class="date"><%= format_date activity.created_at %></p>
+		<h3 class="title">「<%= activity.trackable.product_name %>」の商品を登録しました。</h3>
+		<p class="writer"><%= activity.owner.user_name %></p>
+	</td>
+	<td class="shareItem">
+		<ul>
+		<li class="star"><span class="icon icon-star-empty"></span></li>
+		<li><span class="icon icon-export"></span></li>
+		</ul>
+	</td> 
+</tr>
+<% end %>
