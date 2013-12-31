@@ -72,6 +72,12 @@ class Manage::FriendsController <  ManageController
     @friend.from_user_id = current_user.id
     @friend.to_user_id = to_friend_user_id
     @friend.save
+    @friend.create_activity(:add_friend,
+      :owner => proc {|controller, model| controller.current_user},
+      :params => {
+        :to_user => @friend.to_user_id
+      }
+    )
   end
 
   private

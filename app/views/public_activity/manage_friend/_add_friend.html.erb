@@ -1,0 +1,16 @@
+<% if activity.trackable %>
+<tr>
+	<td class="face"></td>
+	<td class="friendInfo">
+		<h3 class="title">
+			<% if activity.owner.user_name != current_user.user_name %>
+				<%= activity.owner.user_name %>と<%= User.find(p[:to_user]).user_name %>が友達になりました。
+			<% else %>
+				<%= User.find(p[:to_user]).user_name %>と友達になりました。
+			<% end %>
+		</h3>
+	</td>
+	<td class="shareItem">
+	</td> 
+</tr>
+<% end %>
