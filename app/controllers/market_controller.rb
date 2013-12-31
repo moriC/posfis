@@ -57,6 +57,7 @@ class MarketController < ApplicationController
 	  	$order.buyer_user_id = 0
 	  end
 	  $order.condition = 0
+	  $order.product.count = $order.product.count - 1
 	  $order.save
 	  @log = Log.new
 	  @log.for_user_id = $order.buyer_user_id
