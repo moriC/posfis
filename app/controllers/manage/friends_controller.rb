@@ -6,7 +6,7 @@ class Manage::FriendsController <  ManageController
   def index
     friends = Manage::Friend.select("to_user_id").where(:from_user_id => current_user.id)
     @friends_blogs = Manage::Blog.where(:user_id => friends)
-    @users = User.where.not( id: [current_user.id], user_type: [3, 4])
+    @users = User.where.not( id: [current_user.id], user_type: [3, 4], :id => friends)
     @manage_friends = Manage::Friend.where(:to_user_id => friends)
   end
 
