@@ -6,7 +6,11 @@ Posfis::Application.routes.draw do
         get 'add_friend'
       end
     end
-    resources :products
+    resources :products do
+      collection do
+        get 'dealerInfo'
+      end
+    end
     resources :blogs
     resources :trades do
       collection do
