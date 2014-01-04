@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :orders_asso, :class_name => 'Order', :foreign_key => :buyer_user_id
   has_many :orders, :through => :orders_asso, :source => :business_user_id
 
+  belongs_to :asct_info
+
   has_attached_file :avatar, {
     :styles => {
       :thumb => ["50x50#", :png],
