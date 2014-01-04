@@ -1,0 +1,38 @@
+<div class="item w3">
+	<div class="quick edit">
+		<h2 class="bar">特定商取引情報登録</h2>
+		<div class="inner">
+			<%= form_for @dealer_info, :url => {:action => 'create'} do |f| %>
+			  <label for="dealer">販売業者</label>
+			  <%= f.text_field :dealer %>
+			  <label for="manager">運営責任者</label>
+			  <%= f.text_field :manager %>
+			  <label for="manager_number">郵便番号(123-1234)</label>
+			  <%= f.text_field :manager_number %>
+			  <label for="manager_address">所在地</label>
+			  <%= f.text_field :manager_address %>
+			  <label for="manager_tel">電話番号(123-123-1234)</label>
+			  <%= f.text_field :manager_tel %>
+			  <label for="manager_mail">メールアドレス</label>
+			  <%= f.text_field :manager_mail %>
+			  <label for="additional_costs">商品代金以外の必要料金</label>
+			  <%= f.text_field :additional_costs %>
+			  <label for="order_method">注文方法</label>
+			  <%= f.text_field :order_method %>
+			  <label for="pay_method">支払い方法</label>
+			  <%= f.text_field :pay_method %>
+			  <label for="pay_limit">支払い期限</label>
+			  <%= f.text_field :pay_limit %>
+			  <label for="delivered_time">引き渡し期間</label>
+			  <%= f.text_field :delivered_time %>
+			  <label for="return_method">返品交換について</label>
+			  <%= f.text_field :return_method %>
+
+			  <div class="actions">
+			    <%= f.submit %>
+			  </div>
+			<% end %>
+
+		</div>
+	</div>
+</div>
