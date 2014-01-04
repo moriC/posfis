@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231050828) do
+ActiveRecord::Schema.define(version: 20140104054847) do
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -29,6 +29,25 @@ ActiveRecord::Schema.define(version: 20131231050828) do
   add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type", using: :btree
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
+
+  create_table "asct_infos", force: true do |t|
+    t.string   "dealer"
+    t.string   "manager"
+    t.integer  "manager_number"
+    t.string   "manager_address"
+    t.integer  "manager_tel"
+    t.string   "manager_mail"
+    t.text     "additional_costs"
+    t.text     "order_method"
+    t.text     "pay_method"
+    t.text     "pay_limit"
+    t.text     "delivered_time"
+    t.text     "return_method"
+    t.integer  "condition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "delivery_types", force: true do |t|
     t.string   "type_name"
