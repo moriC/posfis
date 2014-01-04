@@ -28,6 +28,7 @@ Posfis::Application.routes.draw do
     resources :settings
     resources :user_settings
     resources :product_value
+    resources :dealer_info
   end
 
   namespace :admin do
