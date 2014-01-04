@@ -9,6 +9,7 @@ class Manage::DealerInfoController < ManageController
 	end
 
 	def edit
+		@dealer_info = AsctInfo.find(params[:id])
 	end
 
 	def create
@@ -23,6 +24,11 @@ class Manage::DealerInfoController < ManageController
 	end
 
 	def update
+		if @dealer_info.update(edaler_info_params)
+        redirect_to manage_dealer_info_index_path
+      else
+        redirect_to edit_manage_dealer_info_index_path(@dealer_info)
+      end
 	end
 
 	def destroy
@@ -30,7 +36,7 @@ class Manage::DealerInfoController < ManageController
 
 	private
 		def set_dealer_info
-			@dealer_info = AsctInfo.where(user_id: current_user.id)
+			@dealer_info = AsctInfo.where(user_id: current_user.id).first
 		end
 
 		def edaler_info_params

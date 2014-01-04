@@ -1,33 +1,45 @@
 <div class="item w3">
 	<div class="quick edit">
 		<h2 class="bar">特定商取引情報</h2>
-		<% if @dealer_info.empty? %>
+		<% if !@dealer_info %>
 			<p>特定商取引情報が登録されていません。</p>
 			<%= link_to '情報登録', new_manage_dealer_info_path %>
 		<% else %>
 			<label>販売業者</label>
+			<%= @dealer_info.dealer %>
 			<br>
 			<label>運営責任者</label>
+			<%= @dealer_info.manager %>
 			<br>
 			<label>郵便番号(123-1234)</label>
+			<%= @dealer_info.manager_number %>
 			<br>
 			<label>所在地</label>
+			<%= @dealer_info.manager_address %>
 			<br>
 			<label>電話番号(123-123-1234)</label>
+			<%= @dealer_info.manager_tel %>
 			<br>
 			<label>メールアドレス</label>
+			<%= @dealer_info.manager_mail %>
 			<br>
 			<label>商品代金以外の必要料金</label>
+			<%= @dealer_info.additional_costs %>
 			<br>
 			<label>注文方法</label>
+			<%= @dealer_info.order_method %>
 			<br>
 			<label>支払い方法</label>
+			<%= @dealer_info.pay_method %>
 			<br>
 			<label>支払い期限</label>
+			<%= @dealer_info.pay_limit %>
 			<br>
 			<label>引き渡し期間</label>
+			<%= @dealer_info.delivered_time %>
 			<br>
 			<label>返品交換について</label>
+			<%= @dealer_info.return_method %>
 			<br>
 			<%= link_to '登録情報編集', edit_manage_dealer_info_path(@dealer_info) %>
 		<% end %>
