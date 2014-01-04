@@ -1,0 +1,22 @@
+<div class="item w3">
+	<div class="quick edit">
+		<h2 class="bar">特定商取引情報</h2>
+		<% if @dealer_info.empty? %>
+			<p>特定商取引情報が登録されていません。</p>
+			<%= link_to '情報登録', new_manage_dealer_info_path %>
+		<% else %>
+			<label>販売業者</label>
+			<label>運営責任者</label>
+			<label>郵便番号(123-1234)</label>
+			<label>所在地</label>
+			<label>電話番号(123-123-1234)</label>
+			<label>メールアドレス</label>
+			<label>商品代金以外の必要料金</label>
+			<label>注文方法</label>
+			<label>支払い方法</label>
+			<label>支払い期限</label>
+			<label>引き渡し期間</label>
+			<label>返品交換について</label>
+		<% end %>
+	</div>
+</div>
