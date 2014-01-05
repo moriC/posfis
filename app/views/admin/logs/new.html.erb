@@ -1,0 +1,19 @@
+<div class="item w3">
+	<div class="artList">
+		<h2 class="bar">新規ログ作成</h2>
+		<div class="inner">
+			<%= form_for @log, :url => {:action => 'create'} do |f|%>
+				<label for="for_user_id">宛先</label>
+				<%= f.collection_select :for_user_id, @users, :id, :user_name, :prompt => "全ユーザ" %>
+				<br>
+				<label for="log_type">ログタイプ</label>
+				<%= f.collection_select :log_type, @log_types, :id, :type_name %>
+				<br>
+				<label for="log_message">ログメッセージ</label>
+				<%= f.text_area :log_message %>
+				<br>
+				<%= f.submit %>
+			<% end %>					
+		</div>
+	</div>
+</div>

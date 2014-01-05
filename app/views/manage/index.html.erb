@@ -4,7 +4,7 @@
 		<div class="inner">
 			<ul>
 				<% @logs.each do |log| %>
-					<li><span class="date"><%= format_date log.created_at %> - </span><%= log_message log.log_type %></li>
+					<li><span class="date"><%= format_date log.created_at %> - </span><%= log.log_type.type_name %></li>
 				<% end %>
 			</ul>
 		</div>

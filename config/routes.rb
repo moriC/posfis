@@ -33,6 +33,7 @@ Posfis::Application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :logs
   end
 
   # デフォルトページを公開ページに設定  
