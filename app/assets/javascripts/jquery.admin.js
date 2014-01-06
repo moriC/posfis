@@ -53,6 +53,10 @@ $(function() {
 			location.reload();
 		})
 		
+		$("next-btn").click(function(){
+			location.reload();
+		})
+		
 		/******************
 		* jQuery.masonry
 		******************/	
