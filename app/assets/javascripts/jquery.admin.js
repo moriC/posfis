@@ -1,7 +1,5 @@
 (function($) {
 
- 	jQuery(function($) {
-
 		/******************
 		* jQuery.masonry
 		******************/	
@@ -68,7 +66,5 @@
 		$(".newFriends p").click(function(){
 			$(this).parent().parent().html("友達になりました").fadeOut("slow");
 		})
-		
-	});
 
 })(jQuery);
