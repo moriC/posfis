@@ -49,7 +49,6 @@ $(function() {
 		*****************/
 		
 		$(".newFriends p a").click(function(){
-			alert("Hello");
 			$(this).parent().parent().html("友達になりました").fadeOut("slow");
 			location.reload();
 		})
