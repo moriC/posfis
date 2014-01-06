@@ -1,18 +1,4 @@
-(function($) {
-
-		/******************
-		* jQuery.masonry
-		******************/	
-			var $container = $('.container');
-			$container.imagesLoaded(function(){
-				$container.masonry({
-					itemSelector: '.item',
-					isAnimated: true,
-					duration: 4000,
-					columnWidth: 200,
-					isFitWidth: true
-				});
-			});
+$(function() {
 		
 		/******************
 		* +-での文字サイズの変更
@@ -64,7 +50,23 @@
 		*****************/
 		
 		$(".newFriends p").click(function(){
+			alert(Hello);
 			$(this).parent().parent().html("友達になりました").fadeOut("slow");
+			location.reload();
 		})
+		
+		/******************
+		* jQuery.masonry
+		******************/	
+			var $container = $('.container');
+			$container.imagesLoaded(function(){
+				$container.masonry({
+					itemSelector: '.item',
+					isAnimated: true,
+					duration: 4000,
+					columnWidth: 200,
+					isFitWidth: true
+				});
+			});
 
-})(jQuery);
+});
