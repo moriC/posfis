@@ -5,9 +5,9 @@
 			<td class="friendInfo">
 				<p class="date"><%= format_date activity.created_at %></p>
 				<% if p[:condition] == 2 %>
-					<h3 class="title">「<%= activity.trackable.product.product_name %>」を発送準備中にしました。</h3>
+					<h3 class="title">「<%= link_to activity.trackable.product.product_name, manage_product_path(activity.trackable.id) %>」を発送準備中にしました。</h3>
 				<% elsif p[:condition] == 3 %>
-					<h3 class="title">「<%= activity.trackable.product.product_name %>」を発送完了にしました。</h3>
+					<h3 class="title">「<%= link_to activity.trackable.product.product_name, manage_product_path(activity.trackable.id) %>」を発送完了にしました。</h3>
 				<% end %> 	
 				<p class="writer"><%= activity.owner.user_name %></p>
 			</td>
