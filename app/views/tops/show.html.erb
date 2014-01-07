@@ -60,7 +60,7 @@
 						<p><%= format_date blog.created_at %></p>
 						<p><%= blog.content %></p>
 					</div>
-					<%= link_to '続きを読む', manage_blog_path, :class => "more" %> 
+					<%= link_to '続きを読む', blog_path(blog.id), :class => "more" %> 
 				</div>
 			<% end %> 
 

@@ -95,6 +95,8 @@ Posfis::Application.routes.draw do
   #     resources :products
   #   end
   resources :tops
+  resources :blogs
+  
   resources :market do
     member do
       get 'purchase'
