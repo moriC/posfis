@@ -4,6 +4,7 @@
 		<%= form_for(@market, :url => {:action => 'confirm'}) do |f| %>
 		  <p>価格: <%= @product.price %>円</p>
 		  <p>送料: <%= @product.delivery_fee %>円</p>
+		  <p><%= link_to '特定商取引情報', dealer_info_market_path %></p>
 		  <br>
 		  <p>個数  <%= f.text_field :request_count %></p>
 		

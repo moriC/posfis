@@ -1,7 +1,15 @@
 class MarketController < ApplicationController
 	layout 'market'
 	include ActiveMerchant::Billing
-	before_action :set_params, only: [:purchase, :confirm, :checkout]
+	before_action :set_params, only: [:dealer_info, :purchase, :confirm, :checkout]
+
+	def dealer_info
+		@dealer_info = AsctInfo.where(user_id: @product.id).first
+		@user = User.find(@product.user_id)
+		friends = Manage::Friend.select("to_user_id").where(:from_user_id => @product.user_id)
+    @friends = Manage::Friend.where(:to_user_id => friends)
+    @products = Manage::Product.where(:user_id => @product.user_id)
+	end
 
 	def purchase
 		@market = Order.new
