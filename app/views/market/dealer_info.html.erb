@@ -1,0 +1,93 @@
+<div class="item w2">
+	<div class="imgBox">
+		<%= image_tag @user.avatar.url(:medium) %>
+	</div>
+	<nav>
+		<div class="navBox">
+			<ul>
+				<li class="menu info c1">
+					<a href="">
+						<span class="icon icon-user"></span>
+						<h2>情報</h2>
+						<p>広島県広島市</p>
+					</a>
+				</li>
+				<li class="menu goods c2">
+					<span class="icon icon-bag"></span>
+					<h2>販売</h2>
+					<p><%= @products.count %>点</p>
+				</li>
+			</ul>
+		</div>
+		<div class="navBox">
+			<ul>
+				<li class="menu friends c3">
+					<span class="icon icon-users"></span>
+					<h2>友達</h2>
+					<p><%= @friends.count %>人</p>
+				</li>
+				<li class="menu pictures c4">
+					<span class="icon icon-picture"></span>
+					<h2>写真</h2>
+					<p>13枚</p>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+<div class="item w3 c1">
+	<div class="item-inner">
+		<h2>特定商取引の表示</h2>
+		<table>
+			<tr>
+				<th>販売業者</th>
+				<td><%= @dealer_info.dealer %></td>
+			</tr>
+			<tr>
+				<th>運営責任者</th>
+				<td><%= @dealer_info.manager %></td>
+			</tr>
+			<tr>
+				<th>郵便番号</th>
+				<td><%= @dealer_info.manager_number %></td>
+			</tr>
+			<tr>
+				<th>所在地</th>
+				<td><%= @dealer_info.manager_address %></td>
+			</tr>
+			<tr>
+				<th>電話番号</th>
+				<td><%= @dealer_info.manager_tel %></td>
+			</tr>
+			<tr>
+				<th>メールアドレス</th>
+				<td><%= @dealer_info.manager_mail %></td>
+			</tr>
+			<tr>
+				<th>商品代金以外の必要料金</th>
+				<td><%= @dealer_info.additional_costs %></td>
+			</tr>
+			<tr>
+				<th>注文方法</th>
+				<td><%= @dealer_info.order_method %></td>
+			</tr>
+			<tr>
+				<th>支払い方法</th>
+				<td><%= @dealer_info.pay_method %></td>
+			</tr>
+			<tr>
+				<th>支払い期限</th>
+				<td><%= @dealer_info.pay_limit %></td>
+			</tr>
+			<tr>
+				<th>引き渡し期間</th>
+				<td><%= @dealer_info.delivered_time %></td>
+			</tr>
+			<tr>
+				<th>返品交換について</th>
+				<td><%= @dealer_info.return_method %></td>
+			</tr>
+		</table>
+	</div>
+</div>

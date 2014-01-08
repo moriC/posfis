@@ -3,7 +3,7 @@
 	<td class="face"><%= image_tag activity.trackable.picture.url(:medium) %></td>
 	<td class="friendInfo">
 		<p class="date"><%= format_date activity.created_at %></p>
-		<h3 class="title">「<%= activity.trackable.product_name %>」の商品を更新しました。</h3>
+		<h3 class="title">「<%= link_to activity.trackable.product_name, manage_product_path(activity.trackable.id) %>」の商品を更新しました。</h3>
 		<p class="writer"><%= activity.owner.user_name %></p>
 	</td>
 	<td class="shareItem">

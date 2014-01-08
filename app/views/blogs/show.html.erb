@@ -1,0 +1,47 @@
+<div class="item w2">
+	<div class="imgBox">
+		<%= image_tag @user.avatar.url(:medium) %>
+	</div>
+	<nav>
+		<div class="navBox">
+			<ul>
+				<li class="menu info c1">
+					<a href="">
+						<span class="icon icon-user"></span>
+						<h2>情報</h2>
+						<p>広島県広島市</p>
+					</a>
+				</li>
+				<li class="menu goods c2">
+					<span class="icon icon-bag"></span>
+					<h2>販売</h2>
+					<p><%= @products.count %>点</p>
+				</li>
+			</ul>
+		</div>
+		<div class="navBox">
+			<ul>
+				<li class="menu friends c3">
+					<span class="icon icon-users"></span>
+					<h2>友達</h2>
+					<p><%= @friends.count %>人</p>
+				</li>
+				<li class="menu pictures c4">
+					<span class="icon icon-picture"></span>
+					<h2>写真</h2>
+					<p>13枚</p>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+<div class="item w3 c1">
+	<div class="imgBox">
+		<%= image_tag @blog.picture.url(:medium) %>
+	</div>
+	<div class="item-inner">
+		<h2><%= @blog.title %></h2>
+		<p><%= @blog.content %></p>
+	</div>
+</div>

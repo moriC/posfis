@@ -95,6 +95,8 @@ Posfis::Application.routes.draw do
   #     resources :products
   #   end
   resources :tops
+  resources :blogs
+
   resources :market do
     member do
       get 'purchase'
@@ -102,6 +104,7 @@ Posfis::Application.routes.draw do
       post 'checkout'
       get 'success'
       post 'complete'
+      get 'dealer_info'
     end
   end
 

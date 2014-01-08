@@ -4,9 +4,9 @@
 	<td class="friendInfo">
 		<h3 class="title">
 			<% if activity.owner.user_name != current_user.user_name %>
-				<%= activity.owner.user_name %>と<%= User.find(p[:to_user]).user_name %>が友達になりました。
+				<%= link_to activity.owner.user_name, top_path(activity.trackable.id) %>と<%= link_to User.find(p[:to_user]).user_name, top_path(User.find(p[:to_user]).id) %>が友達になりました。
 			<% else %>
-				<%= User.find(p[:to_user]).user_name %>と友達になりました。
+				<%= link_to User.find(p[:to_user]).user_name, top_path(User.find(p[:to_user]).id) %>と友達になりました。
 			<% end %>
 		</h3>
 	</td>
