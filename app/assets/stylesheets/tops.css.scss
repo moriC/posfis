@@ -83,6 +83,7 @@ a{
 	text-decoration: none;
 }
 
+
 /***** contents *****/
 header{
 	width: 100%;
@@ -233,7 +234,8 @@ nav{
 }
 
 .navBox{
-	width: 210px;
+	width: 50%;
+	/* width: 210px; */
 	height: 105px;
 	float: left;
 	
@@ -242,9 +244,16 @@ nav{
 	}
 }
 
-.menu{
-	width: 105px;
+.menu-li{
+	width: 50%;
 	height: 105px;
+	//height: 100%;
+	//vertical-align: middle;
+	/*
+width: 105px;
+	height: 105px;
+*/
+	
 	padding-top: 15px;
 	color: #fff;
 	text-align: center;
@@ -278,6 +287,10 @@ nav{
 	.price{
 		font-size: 140%;
 	}
+}
+
+.item-inner{
+	padding: 20px;
 }
 
 /************
