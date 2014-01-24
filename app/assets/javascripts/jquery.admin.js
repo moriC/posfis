@@ -2,16 +2,27 @@ $(function() {
 	/******************
 		* jQuery.masonry
 		******************/
-			var $container = $('.container');
-			$container.imagesLoaded(function(){
-				$container.masonry({
-					itemSelector: '.item',
-					isAnimated: true,
-					duration: 4000,
-					columnWidth: 200,
-					//isFitWidth: true
-				});
+			// var $container = $('.container');
+			// $container.imagesLoaded(function(){
+			// 	$container.masonry({
+			// 		itemSelector: '.item',
+			// 		isAnimated: true,
+			// 		duration: 4000,
+			// 		columnWidth: 200,
+			// 		isFitWidth: true
+			// 	});
+			// });
+		var container = document.querySelector(".container");
+		var msnry;
+		// initialize Masonry after all images have loaded
+		imagesLoaded( container, function() {
+			msnry = new Masonry( container, {
+				// options
+				columnWidth: 200,
+				itemSelector: ".item",
+				isFitWidth: true
 			});
+		});
 		/******************
 		* +-での文字サイズの変更
 		******************/
