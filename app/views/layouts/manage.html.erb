@@ -8,7 +8,11 @@
       <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
   <%= stylesheet_link_tag    "manage", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <%= javascript_include_tag "h-jquery-masonry.pkgd.min", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "imagesloaded", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "z-jquery.admin", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "z-jquery.farmer", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
