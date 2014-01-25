@@ -1,40 +1,27 @@
 $(function() {
-	/******************
-		* jQuery.masonry
-		******************/
-			// var $container = $('.container');
-			// $container.imagesLoaded(function(){
-			// 	$container.masonry({
-			// 		itemSelector: '.item',
-			// 		isAnimated: true,
-			// 		duration: 4000,
-			// 		columnWidth: 200,
-			// 		isFitWidth: true
-			// 	});
-			// });
-		var container = document.querySelector(".container");
-		var msnry;
-		// initialize Masonry after all images have loaded
-		imagesLoaded( container, function() {
-			msnry = new Masonry( container, {
-				// options
-				columnWidth: 200,
-				itemSelector: ".item",
-				isFitWidth: true
-			});
-		});
+	var container = document.querySelector(".container");
+	 var msnry;
+	 // initialize Masonry after all images have loaded
+	 imagesLoaded( container, function() {
+	 	msnry = new Masonry( container, {
+	 		// options
+	 		columnWidth: 220,
+	 		itemSelector: ".item",
+	 		isFitWidth: true
+	 	});
+	 });
 		/******************
 		* +-での文字サイズの変更
 		******************/
 
 			$(".plus").click(function(){
 				$("body").css("font-size","120%");
-				$container.masonry("reload");
+				msnry.layout();
 			})
 
 			$(".minus").click(function(){
 				$("body").css("font-size","13px");
-				$container.masonry("reload");
+				msnry.layout();
 			})
 
 		/******************
@@ -72,13 +59,13 @@ $(function() {
 		* 友達のなる削除
 		*****************/
 
-		$(".newFriends p a").click(function(){
+		$(".friendsBtn").on("click", function(){
 			$(this).parent().parent().html("友達になりました").fadeOut("slow");
-			location.reload();
+			location.reload(true);
 		})
 
-		$("next-btn").click(function(){
-			location.reload();
+		$("next-btn").on("click", function(){
+			$(this).hdie();
 		})
 
 

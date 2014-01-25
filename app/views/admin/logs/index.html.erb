@@ -1,8 +1,8 @@
 <div class="item w3">
 	<div class="artList">
-		<%= link_to '新規メッセージ作成', new_admin_log_path %>
 		<h2 class="bar">システムログ一覧</h2>
 		<div class="inner">
+			<%= link_to '新規メッセージ作成', new_admin_log_path %>
 			<% @logs.each do |log| %>
 				<% if log.for_user_id != 0 %>
 					<%= log.user.user_name %>

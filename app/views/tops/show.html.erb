@@ -6,12 +6,12 @@
 		<% else %>
 		  <p><%= link_to 'トップページへ', tops_path %></p>
 		<% end  %>
-	</div>		
+	</div>
 </header>
 
 	<div class="contents">
 		<div class="container menus">
-		
+
 			<div class="item w2">
 				<div class="imgBox">
 					<%= image_tag @User.avatar.url(:medium) %>
@@ -60,9 +60,9 @@
 						<p><%= format_date blog.created_at %></p>
 						<p><%= blog.content %></p>
 					</div>
-					<%= link_to '続きを読む', blog_path(blog.id), :class => "more" %> 
+					<%= link_to '続きを読む', blog_path(blog.id), :class => "more" %>
 				</div>
-			<% end %> 
+			<% end %>
 
 			<% @products.each do |product| %>
 				<div class="item w1 c1">
@@ -74,9 +74,9 @@
 						<p><%= format_date product.created_at %></p>
 						<p><%= product.contents %></p>
 					</div>
-					<%= link_to '購入する', purchase_market_path, :class => "more" %> 
+					<%= link_to '購入する', purchase_market_path, :class => "more" %>
 				</div>
-			<% end %> 
-			
+			<% end %>
+
 		</div>
 	</div>
