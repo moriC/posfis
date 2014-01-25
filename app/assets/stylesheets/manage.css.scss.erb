@@ -33,11 +33,11 @@ $barColor: #4ed39c;
 	clear : both;
 	height: 0;
 }
-@media print {  
-	%clearfix:after {    
-		height: 1px;    
+@media print {
+	%clearfix:after {
+		height: 1px;
 		margin-bottom: -1px;
-		visibility: hidden;	
+		visibility: hidden;
 	}
 }
 
@@ -89,11 +89,11 @@ img{
 }
 
 .item:not(.nav){
-	
+
 	a{
 		color: $mainColor;
 		text-decoration: underline;
-		
+
 		&:hover{
 			text-decoration: none;
 			opacity: .7;
@@ -110,11 +110,11 @@ img{
 		font-size: 200%;
 		font-weight: bold;
 	}
-	
+
 	a{
 		font-size: 140%;
 		text-decoration: underline;
-		
+
 		&:hover{
 			text-decoration: none;
 			opacity: .7;
@@ -134,7 +134,7 @@ header{
 	background-color: #272e34;
 	color: #fff;
 	@extend %clearfix;
-	
+
 	/********************
 	* 文字サイズ
 	********************/
@@ -144,24 +144,24 @@ header{
 		max-width: 1010px;
 		height: auto;
 		margin: 0 auto;
-		
+
 		span{
 			cursor: pointer;
 		}
 	}
-	
+
 	.plus, .minus{
 		font-size: 120%;
 		&:hover{
 			color: #fff;
 		}
 	}
-	
+
 	.logo{
 		width: 50%;
 		float: left;
 	}
-	
+
 	.hdrTools{
 		width: 50%;
 		min-width: 100px;
@@ -169,11 +169,11 @@ header{
 		color: darken(#fff, 60%);
 		text-align: right;
 		float: left;
-		
+
 		span{
 			padding: 0 10px;
 		}
-		
+
 		.lo{
 			&:hover{
 				color: $accentColor;
@@ -184,26 +184,26 @@ header{
 
 /***** contents *****/
 .contents{
-	max-width: 1010px;
+	max-width: 1110px;
 	margin: 0 auto;
 	padding: 5px;
 }
 
 .container{
-	max-width: 1000px;
+	max-width: 1100px;
 	margin: 0 auto;
 	@extend %clearfix;
 }
 
 /***** item *****/
-.item {	
+.item {
 	margin: 10px;
 	color: $fontColor;
 	background-color: #fff;
 	@include border-radius(3px);
 	box-shadow: 0 1px 2px #d9d8d9;
 	float: left;
-	
+
 	img{
 		width: 100%;
 		height: auto;
@@ -213,22 +213,22 @@ header{
 
 /***** item size *****/
 .w1{
-	width: 180px;
+	width: 200px;
 	height: auto;
 }
 
 .w2{
-	width: 380px;	
+	width: 420px;
 	height: auto;
 }
 
 .w3{
-	width: 780px;	
+	width: 640px;
 	height: auto;
 }
 
 .w4{
-	width: 1000px;	
+	width: 860px;
 	height: auto;
 }
 
@@ -246,25 +246,25 @@ header{
 	width: 180px;
 	font-size: 120%;
 	color: #b2b2b2;
-	
+
 	a{
 		display: block;
 		padding: 10px 20px;
 		color: $fontColor;
-		
+
 		&:hover{
 			color: $accentColor;
 		}
-		
+
 		&:active{
 			background-color: darken($menuColor, 10%);
 		}
 	}
-	
+
 	&:not(:last-child){
 		//border-bottom: solid 2px darken($menuColor, 10%);
 	}
-	
+
 	.icon{
 		margin-right: 10px;
 	}
@@ -294,7 +294,7 @@ header{
 			}
 		}
 	}
-	
+
 	.date{
 		color: lighten($fontColor, 20%);
 	}
@@ -305,10 +305,10 @@ header{
 	h2{
 		font-weight: bold;
 	}
-	
+
 	form{
 		padding: 10px;
-		
+
 		input{
 			display: block;
 			background: none;
@@ -319,25 +319,25 @@ header{
 			color: $fontColor;
 			@include border-radius(2px);
 		}
-		
+
 		input[type="text"]{
 			width: 100%;
-			border: solid 1px darken(#fff, 20%);	
-			
+			border: solid 1px darken(#fff, 20%);
+
 			&:focus{
 				outline: 0;
 				border: solid 2px $mainColor;
 			}
 		}
-		
+
 		input[type="password"]{
 			@extend input[type="text"];
 		}
-		
+
 		input[type="tel"]{
 			@extend input[type="text"];
 		}
-		
+
 		input[type="email"]{
 			@extend input[type="text"];
 		}
@@ -345,7 +345,7 @@ header{
 		input[type="checkbox"]{
 			display: inline;
 		}
-		
+
 		input[type="submit"]{
 			border: none;
 			//border: solid 1px darken(#fff, 20%);
@@ -354,11 +354,11 @@ header{
 			-webkit-appearance: none;
 			color: #fff;
 			padding: 10px 20px;
-			
+
 			&:hover{
 				background-color: lighten($accentColor, 10%);
 			}
-			
+
 			&:active{
 				background-color: darken($accentColor, 15%);
 			}
@@ -370,7 +370,7 @@ header{
 			font-size: 15px;
 			padding: 3px;
 			color: $fontColor;
-			
+
 			&:focus{
 				outline: 0;
 				border: solid 2px $mainColor;
@@ -383,7 +383,7 @@ header{
 	width: 100%;
 	/*ひとまず今は消す*/
 	display: none;
-	
+
 	#canvas{
 		width: 100% !important;
 		margin-top: 20px;
@@ -402,16 +402,16 @@ header{
 	}
 	table{
 		width: 100%;
-		
+
 		tr{
 			display: block;
 			width: 100%;
 			padding: 10px 0;
-			
-			&:not(:last-child){	
+
+			&:not(:last-child){
 				border-bottom: dashed 1px darken(#fff, 20%);
 			}
-			
+
 			&:hover{
 				img{
 					opacity: .6;
@@ -421,39 +421,39 @@ header{
 				}
 			}
 		}
-		
+
 		.face{
 			width: 70px;
 			min-width: 70px;
 			padding: 0 10px;
-			
+
 			img{
 				@include border-radius(50%);
 			}
 		}
-		
+
 		.friendInfo{
 			width: 630px;
 			padding-left: 10px;
 		}
-		
+
 		.title{
 			font-size: 120%;
 			font-weight: bold;
 		}
-		
+
 		.date{
 			color: lighten($fontColor, 20%);
 		}
-		
+
 		.writer{
-			 
+
 		}
 		.shareItem{
 			width: 60px;
 			color: lighten($fontColor, 10%);
 			text-align: center;
-			
+
 			li{
 				line-height: 1.3;
 				font-size: 120%;
@@ -466,56 +466,56 @@ header{
 .friends{
 	table{
 		width: 100%;
-		
+
 		tr{
 			display: block;
 			width: 100%;
 			padding: 10px 0;
-			
+
 			&:hover{
 				color: $mainColor;
 				img{
 					opacity: .6;
 				}
 			}
-			
-			&:not(:last-child){	
+
+			&:not(:last-child){
 				border-bottom: dashed 1px darken(#fff, 20%);
 			}
-			
+
 		}
-		
+
 		.face{
 			width: 70px;
 			min-width: 70px;
 			padding: 0 10px;
-			
+
 			img{
 				@include border-radius(50%);
 			}
 		}
-		
+
 		.friendInfo{
 			padding-left: 10px;
 			line-height: 1.2;
-			
+
 			h3{
 				font-size: 120%;
 			}
-			
+
 			.belong{
 				color: lighten($fontColor, 20%);
 			}
 		}
-		
+
 		.more{
-			
+
 			td{
 				display: block;
 				width: 100%;
 				font-size: 110%;
 				text-align: center;
-				
+
 				.icon{
 					font-size: 110%;
 					font-weight: bold;
@@ -529,11 +529,11 @@ header{
 				}
 			}
 		}
-		
+
 		input[type="text"]{
 			width: 100%;
 		}
-		
+
 		.newFriends{
 			padding-left: 20px;
 		}
@@ -549,22 +549,22 @@ header{
 .artList{
 	.box1{
 		padding: 10px;
-		
+
 		&:nth-child(even){
 			background-color: #f7f7f7;
 		}
 	}
-	
+
 	.artTitle{
 		width: 50%;
 		font-size: 150%;
 		font-weight: bold;
 		padding: 10px;
-		
+
 		&:hover{
 			color: $mainColor;
 		}
-		
+
 		a{
 			&:hover{
 				color: $mainColor;
@@ -574,16 +574,16 @@ header{
 	.artLiInfo{
 		@extend %clearfix;
 	}
-	
+
 	.date{
 		float: left;
 		margin: 0 10px;
 	}
-	
+
 	.artMenu{
 		float: left;
 	}
-	
+
 	.artBtn{
 		float: left;
 		width: 100px;
@@ -598,11 +598,11 @@ header{
 			border-right: solid 1px $fontColor;
 			padding: 0 10px;
 		}
-		
+
 		&:hover{
 			color: $accentColor;
 		}
-		
+
 	}
 }
 
@@ -613,11 +613,11 @@ header{
 		&:not(:last-child){
 			border-bottom: dashed 1px darken(#fff, 20%);
 		}
-		
+
 		&:hover{
 			color: $accentColor;
 		}
-		
+
 		a{
 			&:hover{
 				color: $accentColor;
@@ -636,16 +636,16 @@ header{
 		font-size: 150%;
 		padding: 5px;
 	}
-	
+
 	input[type="button"]{
 		padding: 5px 20px;
 		background-color: #f7f7f7;
 		border: solid 1px #dedede;
-		
+
 		&:hover{
 			background-color: lighten(#f7f7f7, 5%);
 		}
-		
+
 		&:active{
 			background-color: darken(#f7f7f7, 10%);
 		}
@@ -657,25 +657,25 @@ header{
 
 .productList{
 	@extend .artList;
-	
+
 	.artTitle{
 		float: left;
 	}
-	
+
 	.productImg{
 		width: 80px;
 		float: left;
-		
+
 		img{
 			width: 100%;
 			height: auto;
 		}
 	}
-	
+
 	.artLiInfo{
 		clear: both;
 	}
-	
+
 }
 
 
@@ -685,14 +685,14 @@ header{
 .histrry-type{
 	@extend .inner;
 	padding: 10px;
-	
+
 	table{
 		td{
 			display: inline-block;
 		}
 	}
 }
-	
+
 $before: #fc7c80;
 $now: #ffff80;
 $end: #ffffff;
@@ -728,7 +728,7 @@ $end: #ffffff;
 .send-end-list{
 	padding: 10px;
 	border: solid 5px $end;
-	
+
 	.next-btn{
 		display: none;
 	}
@@ -746,7 +746,7 @@ $end: #ffffff;
 	background-color: $accentColor;
 	font-size: 130%;
 	cursor: pointer;
-	
+
 	&:hover{
 		background-color: lighten($accentColor, 10%);
 	}
@@ -761,7 +761,7 @@ $end: #ffffff;
 .edit-inner{
 	@extend .inner;
 	padding: 10px;
-	
+
 	h3{
 		font-weight: bold;
 		font-size: 150%;
@@ -778,16 +778,16 @@ $end: #ffffff;
 .theme{
 	width: 100%;
 	padding: 10px;
-	
+
 	.themeImg{
 		width: 100%;
-		
+
 		img{
 			width: 100%;
 		}
-		
+
 	}
-	
+
 	.themeCnt{
 		width: 100%;
 		line-height: 1.8;
@@ -798,26 +798,26 @@ $end: #ffffff;
 	width: 100%;
 	padding: 10px;
 	@extend %clearfix;
-	
-	&:not(:last-child){	
+
+	&:not(:last-child){
 		border-bottom: dashed 1px $fontColor;
 	}
-	
+
 	.themeImg{
 		width: 50%;
 		float: left;
 	}
-	
+
 	.themeCnt{
 		width: 50%;
 		padding-left: 10px;
 		float: left;
 	}
-	
+
 	a{
 		color: $mainColor;
 		text-decoration: underline;
-		
+
 		&:hover{
 			text-decoration: none;
 			opacity: .7;
@@ -831,13 +831,13 @@ $end: #ffffff;
 
 .table-inner{
 	padding: 10px;
-	
+
 	tr{
 		&:nth-child(even){
 			background-color: #f8f8f8;
 		}
 	}
-	
+
 	td{
 		padding: 10px;
 		text-align: center;
@@ -870,11 +870,11 @@ $end: #ffffff;
 * media query / tablet
 ******************/
 @media screen and (max-width: 800px) {
-	
+
 	.w3{
 		width: 580px;
 	}
-	
+
 	.accsess{
 		display: none;
 	}
@@ -894,33 +894,33 @@ $end: #ffffff;
 	.container{
 		width: auto !important;
 	}
-	
+
 	.w1{
 		width: 100%;
 		height: auto;
 	}
-	
+
 	.w2{
 		width: 100%;
 		height: auto;
 	}
-	
+
 	.w3{
 		width: 100%;
 		height: auto;
 	}
-	
-	
-	.item {	
+
+
+	.item {
 		margin: 5px 0;
 		@include box-shadow(0 0 0 #000);
-		
+
 		img{
 			width: 100%;
 			height: auto;
 		}
 	}
-	
+
 	ul{
 		&:after {
 			content: '';
@@ -929,7 +929,7 @@ $end: #ffffff;
 			height: 0;
 		}
 	}
-	
+
 	.menu{
 		width: 25%;
 		font-size: 180%;
@@ -938,18 +938,18 @@ $end: #ffffff;
 		border: solid 2px darken($menuColor, 10%);
 		border-left: 0;
 		border-top: 0;
-		
+
 		a{
 			-webkit-tap-highlight-color: darken($accentColor, 10%);
 		}
-		
+
 		li{
 		}
-		
+
 		.icon{
 			//font-size: 180%;
 		}
-		
+
 		.tag{
 			display: none;
 		}
@@ -967,34 +967,34 @@ $end: #ffffff;
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
- 
+
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-     
+
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
- 
+
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 
- 
+
 .icon-plus:before { content: '\e80d'; } /* '' */
 .icon-minus:before { content: '\e810'; } /* '' */
 .icon-info:before { content: '\e814'; } /* '' */
