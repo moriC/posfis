@@ -152,6 +152,11 @@ header{
 	}
 }
 
+.item:not(.nav) a{
+	color:#fff;
+	padding: 0;
+}
+
 /***** item colors *****/
 .c1{
 	background-color: $infoColor;
